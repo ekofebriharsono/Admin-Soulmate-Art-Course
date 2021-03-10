@@ -141,12 +141,12 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
                                                     <td><?php echo $row['facebook']; ?></td>
                                                     <td><?php echo $row['whatsapp']; ?></td>
                                                     <td>
-                                                        <button data-toggle="modal" data-target="#a<?php echo $row['id_client']; ?>">
+                                                        <button data-toggle="modal" data-target="#a<?php echo $row['id_owner']; ?>">
                                                             <img style="width:100px;height:100px;" src="<?php echo $row['image']; ?>" alt="">
                                                         </button>
                                                     </td>
                                                     <td>
-                                                        <button class="btn btn-block bg-gradient-warning" name="detail" data-toggle="modal" data-target="#b<?php echo $row['id_client']; ?>">Detail</button>
+                                                        <button class="btn btn-block bg-gradient-warning" name="detail" data-toggle="modal" data-target="#b<?php echo $row['id_owner']; ?>">Detail</button>
                                                     </td>
                                                 </tr>
                                                 <div class="modal fade" id="a<?php echo $row['id_owner']; ?>">
@@ -169,7 +169,7 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
                                                     </div>
                                                     <!-- /.modal-dialog -->
                                                 </div>
-                                                <div class="modal fade" id="b<?php echo $row['id_client']; ?>">
+                                                <div class="modal fade" id="b<?php echo $row['id_owner']; ?>">
                                                         <div class="modal-dialog modal-lg">
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
@@ -179,24 +179,36 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
                                                                     </button>
                                                                 </div>
                                                                 <div class="modal-body">
-                                                                    <form role="form" enctype="multipart/form-data" method="POST" action="../../php/companyProfile/clientActions.php">
+                                                                    <form role="form" enctype="multipart/form-data" method="POST" action="../../php/companyProfile/ownerActions.php">
                                                                         <div class="card-body">
                                                                         <div class="form-group">
                                                                                     <label for="exampleInputEmail1">Id Owner
                                                                                         Id</label>
-                                                                                    <input type="text" class="form-control" name="id" placeholder="Enter Id Client" value="<?php echo $row['id_owner']; ?>">
+                                                                                    <input type="text" class="form-control" name="id" placeholder="Enter Id owner" value="<?php echo $row['id_owner']; ?>">
                                                                                 </div>
                                                                             <div class="form-group">
                                                                                 <label for="exampleInputEmail1">Owner Name</label>
-                                                                                <input type="text" class="form-control" name="owner_name" placeholder="Enter client name" value="<?php echo $row['client_name']; ?>">
+                                                                                <input type="text" class="form-control" name="owner_name" placeholder="Enter owner name" value="<?php echo $row['owner_name']; ?>">
                                                                             </div>
                                                                             <div class="form-group">
-                                                                                <label for="exampleInputEmail1">Description</label>
-                                                                                <input type="text" class="form-control" name="description" placeholder="Enter description" value="<?php echo $row['description']; ?>">
+                                                                                <label for="exampleInputEmail1">Label Owner</label>
+                                                                                <input type="text" class="form-control" name="label_owner" placeholder="Enter label owner" value="<?php echo $row['label_owner']; ?>">
                                                                             </div>
                                                                             <div class="form-group">
-                                                                                <label for="exampleInputEmail1">Link</label>
-                                                                                <input type="text" class="form-control" name="link" placeholder="Enter link" value="<?php echo $row['link']; ?>">
+                                                                                <label for="exampleInputEmail1">Descriptions</label>
+                                                                                <input type="text" class="form-control" name="owner_descriptions" placeholder="Enter Descriptions" value="<?php echo $row['owner_descriptions']; ?>">
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="exampleInputEmail1">instagram</label>
+                                                                                <input type="text" class="form-control" name="instagram" placeholder="Enter instagram" value="<?php echo $row['instagram']; ?>">
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="exampleInputEmail1">facebook</label>
+                                                                                <input type="text" class="form-control" name="facebook" placeholder="Enter facebook" value="<?php echo $row['facebook']; ?>">
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="exampleInputEmail1">whatsapp</label>
+                                                                                <input type="text" class="form-control" name="whatsapp" placeholder="Enter whatsapp" value="<?php echo $row['whatsapp']; ?>">
                                                                             </div>
                                                                             <div class="form-group">
                                                                                 <label for="exampleInputEmail1">Image || 400x173 px </label>
@@ -205,7 +217,7 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
                                                                         </div>
                                                                         <!-- /.card-body -->
                                                                         <div class="card-footer">
-                                                                            <button type="submit" class="btn btn-primary" name="submitUpdateClient">Submit</button>
+                                                                            <button type="submit" class="btn btn-primary" name="submitUpdateOwner">Save Changes</button>
                                                                         </div>
                                                                     </form>
                                                                 </div>
@@ -214,7 +226,7 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
                                                                     <form class="forms-sample" action="../../php/companyProfile/ownerActions.php" method="POST">
                                                                         <input type="text" class="form-control" name="id" hidden value="<?php echo $row['id_owner'];
                                                                                                                                         ?>">
-                                                                        <button class="btn btn-default bg-gradient-danger" name="submitDeleteClient">Delete</button>
+                                                                        <button class="btn btn-default bg-gradient-danger" name="submitDeleteOwner">Delete</button>
                                                                     </form>
                                                                 </div>
                                                             </div>
