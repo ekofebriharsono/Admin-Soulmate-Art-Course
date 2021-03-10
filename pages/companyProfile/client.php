@@ -167,11 +167,11 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
                                                                 <div class="modal-body">
                                                                     <form role="form" enctype="multipart/form-data" method="POST" action="../../php/companyProfile/clientActions.php">
                                                                         <div class="card-body">
-                                                                        <div class="form-group">
-                                                                                    <label for="exampleInputEmail1">Id Client
-                                                                                        Id</label>
-                                                                                    <input type="text" class="form-control" name="id" placeholder="Enter Id Client" value="<?php echo $row['id_client']; ?>" readonly required>
-                                                                                </div>
+                                                                            <div class="form-group">
+                                                                                <label for="exampleInputEmail1">Id Client
+                                                                                    Id</label>
+                                                                                <input type="text" class="form-control" name="id" placeholder="Enter Id Client" value="<?php echo $row['id_client']; ?>" readonly required>
+                                                                            </div>
                                                                             <div class="form-group">
                                                                                 <label for="exampleInputEmail1">Client Name</label>
                                                                                 <input type="text" class="form-control" name="client_name" placeholder="Enter client name" value="<?php echo $row['client_name']; ?>" required>
@@ -186,7 +186,7 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
                                                                             </div>
                                                                             <div class="form-group">
                                                                                 <label for="exampleInputEmail1">Image || 400x173 px </label>
-                                                                                <input type="file" class="form-control" name="image" >
+                                                                                <input type="file" class="form-control" name="image">
                                                                             </div>
                                                                         </div>
                                                                         <!-- /.card-body -->
