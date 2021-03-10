@@ -75,31 +75,31 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
                                         <div class="card-body">
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Owner Name</label>
-                                                <input type="text" class="form-control" name="owner_name" placeholder="Enter owner name">
+                                                <input type="text" class="form-control" name="owner_name" placeholder="Enter owner name" required>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Label Owner</label>
-                                                <input type="text" class="form-control" name="label_owner" placeholder="Enter label owner">
+                                                <input type="text" class="form-control" name="label_owner" placeholder="Enter label owner" required>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Owner Description</label>
-                                                <input type="text" class="form-control" name="owner_descriptions" placeholder="Enter owner description">
+                                                <input type="text" class="form-control" name="owner_descriptions" placeholder="Enter owner description" required>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Instagram</label>
-                                                <input type="text" class="form-control" name="instagram" placeholder="Enter instagram">
+                                                <input type="text" class="form-control" name="instagram" placeholder="Enter instagram" required>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Facebook</label>
-                                                <input type="text" class="form-control" name="facebook" placeholder="Enter facebook">
+                                                <input type="text" class="form-control" name="facebook" placeholder="Enter facebook" required>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">WhatsApp</label>
-                                                <input type="text" class="form-control" name="whatsapp" placeholder="Enter whatsapp">
+                                                <input type="text" class="form-control" name="whatsapp" placeholder="Enter whatsapp" required>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Image || 600x600 px</label>
-                                                <input type="file" class="form-control" name="image">
+                                                <input type="file" class="form-control" name="image" required>
                                             </div>
                                         </div>
                                         <!-- /.card-body -->
@@ -184,31 +184,31 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
                                                                             <div class="form-group">
                                                                                 <label for="exampleInputEmail1">Id Owner
                                                                                     Id</label>
-                                                                                <input type="text" class="form-control" name="id" placeholder="Enter Id owner" value="<?php echo $row['id_owner']; ?>" readonly>
+                                                                                <input type="text" class="form-control" name="id" placeholder="Enter Id owner" value="<?php echo $row['id_owner']; ?>" readonly required>
                                                                             </div>
                                                                             <div class="form-group">
                                                                                 <label for="exampleInputEmail1">Owner Name</label>
-                                                                                <input type="text" class="form-control" name="owner_name" placeholder="Enter owner name" value="<?php echo $row['owner_name']; ?>">
+                                                                                <input type="text" class="form-control" name="owner_name" placeholder="Enter owner name" value="<?php echo $row['owner_name']; ?>" required>
                                                                             </div>
                                                                             <div class="form-group">
                                                                                 <label for="exampleInputEmail1">Label Owner</label>
-                                                                                <input type="text" class="form-control" name="label_owner" placeholder="Enter label owner" value="<?php echo $row['label_owner']; ?>">
+                                                                                <input type="text" class="form-control" name="label_owner" placeholder="Enter label owner" value="<?php echo $row['label_owner']; ?>" required>
                                                                             </div>
                                                                             <div class="form-group">
                                                                                 <label for="exampleInputEmail1">Descriptions</label>
-                                                                                <input type="text" class="form-control" name="owner_descriptions" placeholder="Enter Descriptions" value="<?php echo $row['owner_descriptions']; ?>">
+                                                                                <input type="text" class="form-control" name="owner_descriptions" placeholder="Enter Descriptions" value="<?php echo $row['owner_descriptions']; ?>" required>
                                                                             </div>
                                                                             <div class="form-group">
                                                                                 <label for="exampleInputEmail1">instagram</label>
-                                                                                <input type="text" class="form-control" name="instagram" placeholder="Enter instagram" value="<?php echo $row['instagram']; ?>">
+                                                                                <input type="text" class="form-control" name="instagram" placeholder="Enter instagram" value="<?php echo $row['instagram']; ?>" required>
                                                                             </div>
                                                                             <div class="form-group">
                                                                                 <label for="exampleInputEmail1">facebook</label>
-                                                                                <input type="text" class="form-control" name="facebook" placeholder="Enter facebook" value="<?php echo $row['facebook']; ?>">
+                                                                                <input type="text" class="form-control" name="facebook" placeholder="Enter facebook" value="<?php echo $row['facebook']; ?>" required>
                                                                             </div>
                                                                             <div class="form-group">
                                                                                 <label for="exampleInputEmail1">whatsapp</label>
-                                                                                <input type="text" class="form-control" name="whatsapp" placeholder="Enter whatsapp" value="<?php echo $row['whatsapp']; ?>">
+                                                                                <input type="text" class="form-control" name="whatsapp" placeholder="Enter whatsapp" value="<?php echo $row['whatsapp']; ?>" required>
                                                                             </div>
                                                                             <div class="form-group">
                                                                                 <label for="exampleInputEmail1">Image || 400x173 px

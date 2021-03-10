@@ -75,19 +75,19 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
                                         <div class="card-body">
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Event Name</label>
-                                                <input type="text" class="form-control" name="event_name" placeholder="Enter event name">
+                                                <input type="text" class="form-control" name="event_name" placeholder="Enter event name" required>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Event Descriptions</label>
-                                                <textarea type="text" class="form-control" name="event_descriptions" placeholder="Enter event descriptions"></textarea>
+                                                <textarea type="text" class="form-control" name="event_descriptions" placeholder="Enter event descriptions" required></textarea>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Event Date</label>
-                                                <input type="date" class="form-control" name="event_date" placeholder="Enter event date">
+                                                <input type="date" class="form-control" name="event_date" placeholder="Enter event date" required>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Image || 1024x768 px</label>
-                                                <input type="file" class="form-control" name="image">
+                                                <input type="file" class="form-control" name="image" required>
                                             </div>
                                         </div>
                                         <!-- /.card-body -->
@@ -172,23 +172,23 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
                                                                             <div class="form-group">
                                                                                 <label for="exampleInputEmail1">Id Event
                                                                                     Id</label>
-                                                                                <input type="text" class="form-control" name="id" placeholder="Enter Id event" value="<?php echo $row['id_event']; ?>" readonly>
+                                                                                <input type="text" class="form-control" name="id" placeholder="Enter Id event" value="<?php echo $row['id_event']; ?>" readonly required>
                                                                             </div>
                                                                             <div class="form-group">
                                                                                 <label for="exampleInputEmail1">Event Name</label>
-                                                                                <input type="text" class="form-control" name="event_name" placeholder="Enter event name" value="<?php echo $row['event_name']; ?>">
+                                                                                <input type="text" class="form-control" name="event_name" placeholder="Enter event name" value="<?php echo $row['event_name']; ?>" required>
                                                                             </div>
                                                                             <div class="form-group">
                                                                                 <label for="exampleInputEmail1">Description</label>
-                                                                                <input type="text" class="form-control" name="event_descriptions" placeholder="Enter event descriptions" value="<?php echo $row['event_descriptions']; ?>">
+                                                                                <input type="text" class="form-control" name="event_descriptions" placeholder="Enter event descriptions" value="<?php echo $row['event_descriptions']; ?>" required>
                                                                             </div>
                                                                             <div class="form-group">
                                                                                 <label for="exampleInputEmail1">Date</label>
-                                                                                <input type="date" class="form-control" name="event_date" placeholder="Enter date" value="<?php echo $row['date']; ?>">
+                                                                                <input type="date" class="form-control" name="event_date" placeholder="Enter date" value="<?php echo $row['date']; ?>" required>
                                                                             </div>
                                                                             <div class="form-group">
                                                                                 <label for="exampleInputEmail1">Image || 1024x768 px </label>
-                                                                                <input type="file" class="form-control" name="image">
+                                                                                <input type="file" class="form-control" name="image" >
                                                                             </div>
                                                                         </div>
                                                                         <!-- /.card-body -->

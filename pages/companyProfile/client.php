@@ -74,19 +74,19 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
                                         <div class="card-body">
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Client Name</label>
-                                                <input type="text" class="form-control" name="client_name" placeholder="Enter client name">
+                                                <input type="text" class="form-control" name="client_name" placeholder="Enter client name" required>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Description</label>
-                                                <input type="text" class="form-control" name="description" placeholder="Enter description">
+                                                <input type="text" class="form-control" name="description" placeholder="Enter description" required>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Link</label>
-                                                <input type="text" class="form-control" name="link" placeholder="Enter link">
+                                                <input type="text" class="form-control" name="link" placeholder="Enter link" required>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Image || 400x173 px </label>
-                                                <input type="file" class="form-control" name="image">
+                                                <input type="file" class="form-control" name="image" required>
                                             </div>
                                         </div>
                                         <!-- /.card-body -->
@@ -170,23 +170,23 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
                                                                         <div class="form-group">
                                                                                     <label for="exampleInputEmail1">Id Client
                                                                                         Id</label>
-                                                                                    <input type="text" class="form-control" name="id" placeholder="Enter Id Client" value="<?php echo $row['id_client']; ?>" readonly>
+                                                                                    <input type="text" class="form-control" name="id" placeholder="Enter Id Client" value="<?php echo $row['id_client']; ?>" readonly required>
                                                                                 </div>
                                                                             <div class="form-group">
                                                                                 <label for="exampleInputEmail1">Client Name</label>
-                                                                                <input type="text" class="form-control" name="client_name" placeholder="Enter client name" value="<?php echo $row['client_name']; ?>">
+                                                                                <input type="text" class="form-control" name="client_name" placeholder="Enter client name" value="<?php echo $row['client_name']; ?>" required>
                                                                             </div>
                                                                             <div class="form-group">
                                                                                 <label for="exampleInputEmail1">Description</label>
-                                                                                <input type="text" class="form-control" name="description" placeholder="Enter description" value="<?php echo $row['description']; ?>">
+                                                                                <input type="text" class="form-control" name="description" placeholder="Enter description" value="<?php echo $row['description']; ?>" required>
                                                                             </div>
                                                                             <div class="form-group">
                                                                                 <label for="exampleInputEmail1">Link</label>
-                                                                                <input type="text" class="form-control" name="link" placeholder="Enter link" value="<?php echo $row['link']; ?>">
+                                                                                <input type="text" class="form-control" name="link" placeholder="Enter link" value="<?php echo $row['link']; ?>" required>
                                                                             </div>
                                                                             <div class="form-group">
                                                                                 <label for="exampleInputEmail1">Image || 400x173 px </label>
-                                                                                <input type="file" class="form-control" name="image">
+                                                                                <input type="file" class="form-control" name="image" >
                                                                             </div>
                                                                         </div>
                                                                         <!-- /.card-body -->
