@@ -170,70 +170,70 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
                                                     <!-- /.modal-dialog -->
                                                 </div>
                                                 <div class="modal fade" id="b<?php echo $row['id_owner']; ?>">
-                                                        <div class="modal-dialog modal-lg">
-                                                            <div class="modal-content">
-                                                                <div class="modal-header">
-                                                                    <h4 class="modal-title">Detail Data</h4>
-                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                        <span aria-hidden="true">&times;</span>
-                                                                    </button>
-                                                                </div>
-                                                                <div class="modal-body">
-                                                                    <form role="form" enctype="multipart/form-data" method="POST" action="../../php/companyProfile/ownerActions.php">
-                                                                        <div class="card-body">
-                                                                        <div class="form-group">
-                                                                                    <label for="exampleInputEmail1">Id Owner
-                                                                                        Id</label>
-                                                                                    <input type="text" class="form-control" name="id" placeholder="Enter Id owner" value="<?php echo $row['id_owner']; ?>">
-                                                                                </div>
-                                                                            <div class="form-group">
-                                                                                <label for="exampleInputEmail1">Owner Name</label>
-                                                                                <input type="text" class="form-control" name="owner_name" placeholder="Enter owner name" value="<?php echo $row['owner_name']; ?>">
-                                                                            </div>
-                                                                            <div class="form-group">
-                                                                                <label for="exampleInputEmail1">Label Owner</label>
-                                                                                <input type="text" class="form-control" name="label_owner" placeholder="Enter label owner" value="<?php echo $row['label_owner']; ?>">
-                                                                            </div>
-                                                                            <div class="form-group">
-                                                                                <label for="exampleInputEmail1">Descriptions</label>
-                                                                                <input type="text" class="form-control" name="owner_descriptions" placeholder="Enter Descriptions" value="<?php echo $row['owner_descriptions']; ?>">
-                                                                            </div>
-                                                                            <div class="form-group">
-                                                                                <label for="exampleInputEmail1">instagram</label>
-                                                                                <input type="text" class="form-control" name="instagram" placeholder="Enter instagram" value="<?php echo $row['instagram']; ?>">
-                                                                            </div>
-                                                                            <div class="form-group">
-                                                                                <label for="exampleInputEmail1">facebook</label>
-                                                                                <input type="text" class="form-control" name="facebook" placeholder="Enter facebook" value="<?php echo $row['facebook']; ?>">
-                                                                            </div>
-                                                                            <div class="form-group">
-                                                                                <label for="exampleInputEmail1">whatsapp</label>
-                                                                                <input type="text" class="form-control" name="whatsapp" placeholder="Enter whatsapp" value="<?php echo $row['whatsapp']; ?>">
-                                                                            </div>
-                                                                            <div class="form-group">
-                                                                                <label for="exampleInputEmail1">Image || 400x173 px </label>
-                                                                                <input type="file" class="form-control" name="image">
-                                                                            </div>
-                                                                        </div>
-                                                                        <!-- /.card-body -->
-                                                                        <div class="card-footer">
-                                                                            <button type="submit" class="btn btn-primary" name="submitUpdateOwner">Save Changes</button>
-                                                                        </div>
-                                                                    </form>
-                                                                </div>
-                                                                <div class="modal-footer justify-content-between">
-                                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                                    <form class="forms-sample" action="../../php/companyProfile/ownerActions.php" method="POST">
-                                                                        <input type="text" class="form-control" name="id" hidden value="<?php echo $row['id_owner'];
-                                                                                                                                        ?>">
-                                                                        <button class="btn btn-default bg-gradient-danger" name="submitDeleteOwner">Delete</button>
-                                                                    </form>
-                                                                </div>
+                                                    <div class="modal-dialog modal-lg">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h4 class="modal-title">Detail Data</h4>
+                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
                                                             </div>
-                                                            <!-- /.modal-content -->
+                                                            <div class="modal-body">
+                                                                <form role="form" enctype="multipart/form-data" method="POST" action="../../php/companyProfile/ownerActions.php">
+                                                                    <div class="card-body">
+                                                                        <div class="form-group">
+                                                                            <label for="exampleInputEmail1">Id Owner
+                                                                                Id</label>
+                                                                            <input type="text" class="form-control" name="id" placeholder="Enter Id owner" value="<?php echo $row['id_owner']; ?>">
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label for="exampleInputEmail1">Owner Name</label>
+                                                                            <input type="text" class="form-control" name="owner_name" placeholder="Enter owner name" value="<?php echo $row['owner_name']; ?>">
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label for="exampleInputEmail1">Label Owner</label>
+                                                                            <input type="text" class="form-control" name="label_owner" placeholder="Enter label owner" value="<?php echo $row['label_owner']; ?>">
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label for="exampleInputEmail1">Descriptions</label>
+                                                                            <input type="text" class="form-control" name="owner_descriptions" placeholder="Enter Descriptions" value="<?php echo $row['owner_descriptions']; ?>">
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label for="exampleInputEmail1">instagram</label>
+                                                                            <input type="text" class="form-control" name="instagram" placeholder="Enter instagram" value="<?php echo $row['instagram']; ?>">
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label for="exampleInputEmail1">facebook</label>
+                                                                            <input type="text" class="form-control" name="facebook" placeholder="Enter facebook" value="<?php echo $row['facebook']; ?>">
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label for="exampleInputEmail1">whatsapp</label>
+                                                                            <input type="text" class="form-control" name="whatsapp" placeholder="Enter whatsapp" value="<?php echo $row['whatsapp']; ?>">
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label for="exampleInputEmail1">Image || 400x173 px </label>
+                                                                            <input type="file" class="form-control" name="image">
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- /.card-body -->
+                                                                    <div class="card-footer">
+                                                                        <button type="submit" class="btn btn-primary" name="submitUpdateOwner">Save Changes</button>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                            <div class="modal-footer justify-content-between">
+                                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                                <form class="forms-sample" action="../../php/companyProfile/ownerActions.php" method="POST">
+                                                                    <input type="text" class="form-control" name="id" hidden value="<?php echo $row['id_owner'];
+                                                                                                                                    ?>">
+                                                                    <button class="btn btn-default bg-gradient-danger" name="submitDeleteOwner">Delete</button>
+                                                                </form>
+                                                            </div>
                                                         </div>
-                                                        <!-- /.modal-dialog -->
+                                                        <!-- /.modal-content -->
                                                     </div>
+                                                    <!-- /.modal-dialog -->
+                                                </div>
                                             <?php } ?>
                                         </tbody>
 
@@ -309,7 +309,7 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
                     } else if (status == 203) {
                         toastr.success('Data Berhasil Diperbaharui!');
                     } else {
-                        toastr.success('Data Gagal Disimpan!');
+                        toastr.error('Data Gagal Disimpan!');
                     }
                 <?php } ?>
             });
