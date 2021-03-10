@@ -30,9 +30,9 @@ if(isset($_POST['submitInsertHeader'])){
    $sql = "INSERT INTO `header` (`id_header`, `header_name`, `sort_name`, `button_link`, `image`) VALUES (NULL, '$header_name', '$sort_name', '$button_link','$image')";
    $res = mysqli_query($conn, $sql);
    if($res){
-        header('Location: ../../pages/companyProfile/header.php');
+        header('Location: ../../pages/companyProfile/header.php?status=201');
    }else {
-    header('Location: ../../pages/companyProfile/header.php?status=gagal');
+    header('Location: ../../pages/companyProfile/header.php?status=500');
    }
 
 }
@@ -43,9 +43,9 @@ if(isset($_POST['submitInsertHeader'])){
     $sql = "DELETE FROM `header` WHERE `header`.`id_header` = $id";
     $res = mysqli_query($conn, $sql);
     if($res){
-        header('Location: ../../pages/companyProfile/header.php');
+        header('Location: ../../pages/companyProfile/header.php?status=202');
     }else {
-        header('Location: ../../pages/companyProfile/header.php?status=gagal');
+        header('Location: ../../pages/companyProfile/header.php?status=500');
     }
  
  }
