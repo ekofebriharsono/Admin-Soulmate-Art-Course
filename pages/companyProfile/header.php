@@ -127,12 +127,34 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
                                                         <td><?php echo $row['header_name']; ?></td>
                                                         <td><?php echo $row['sort_name']; ?></td>
                                                         <td>
-                                                            <img style="width:100px;height:100px;" src="<?php echo $row['image']; ?>" alt="">
+                                                            <button data-toggle="modal" data-target="#a<?php echo $row['id_header']; ?>">
+                                                                <img style="width:100px;height:100px;" src="<?php echo $row['image']; ?>" alt="">
+                                                            </button>
                                                         </td>
                                                         <td>
-                                                            <button class="btn btn-block bg-gradient-warning" name="detail" data-toggle="modal" data-target="#a<?php echo $row['id_header']; ?>">Detail</button>
+                                                            <button class="btn btn-block bg-gradient-warning" name="detail" data-toggle="modal" data-target="#b<?php echo $row['id_header']; ?>">Detail</button>
                                                         </td>
                                                         <div class="modal fade" id="a<?php echo $row['id_header']; ?>">
+                                                            <div class="modal-dialog modal-lg">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h4 class="modal-title">Gambar</h4>
+                                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                            <span aria-hidden="true">&times;</span>
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        <center>
+                                                                            <img src="<?php echo $row['image']; ?>" alt="">
+                                                                        </center>
+                                                                    </div>
+
+                                                                </div>
+                                                                <!-- /.modal-content -->
+                                                            </div>
+                                                            <!-- /.modal-dialog -->
+                                                        </div>
+                                                        <div class="modal fade" id="b<?php echo $row['id_header']; ?>">
                                                             <div class="modal-dialog modal-lg">
                                                                 <div class="modal-content">
                                                                     <div class="modal-header">
@@ -191,6 +213,7 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
                                                             </div>
                                                             <!-- /.modal-dialog -->
                                                         </div>
+
                                                     </tr>
                                                 <?php } ?>
                                             </tbody>
@@ -263,6 +286,8 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
                         toastr.success('Data Berhasil Dihapus!');
                     } else if (status == 203) {
                         toastr.success('Data Berhasil Diperbaharui!');
+                    } else {
+                        toastr.success('Data Gagal Disimpan!');
                     }
                 <?php } ?>
             });
