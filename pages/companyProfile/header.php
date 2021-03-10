@@ -167,7 +167,7 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
                                                                         <form role="form" enctype="multipart/form-data" method="POST" action="../../php/companyProfile/headerActions.php">
                                                                             <div class="card-body">
                                                                                 <div class="form-group">
-                                                                                    <label for="exampleInputEmail1">Header
+                                                                                    <label for="exampleInputEmail1">Id Header
                                                                                         Id</label>
                                                                                     <input type="text" class="form-control" name="id" placeholder="Enter header name" value="<?php echo $row['id_header']; ?>">
                                                                                 </div>
