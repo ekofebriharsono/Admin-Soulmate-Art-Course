@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <body>
 
@@ -9,4 +9,17 @@ Pilih image yang akan di-upload:
 </form>
 
 </body>
-</html>
+</html> -->
+
+
+
+
+
+
+
+<?php
+
+function formatText($text, $num_char = 30){
+    return substr($text, 0, $num_char) . '...';
+}
+?>
