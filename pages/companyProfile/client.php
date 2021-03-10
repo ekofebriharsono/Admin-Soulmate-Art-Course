@@ -124,10 +124,10 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
                                                 <?php while ($row = mysqli_fetch_array($res)) { ?>
                                                     <tr>
                                                         <td><?php echo $row['client_name']; ?></td>
-                                                        <td><?php echo formatText30($row['description']); ?></td>
+                                                        <td><?php echo formatText50($row['description']); ?></td>
                                                         <td>
                                                             <button data-toggle="modal" data-target="#a<?php echo $row['id_client']; ?>">
-                                                                <img style="width:100px;height:100px;" src="<?php echo $row['image']; ?>" alt="">
+                                                                <img style="width:100px;height:50px;" src="<?php echo $row['image']; ?>" alt="">
                                                             </button>
                                                         </td>
                                                         <td>
@@ -281,7 +281,7 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
                     } else if (status == 203) {
                         toastr.success('Data Berhasil Diperbaharui!');
                     } else {
-                        toastr.success('Data Gagal Disimpan!');
+                        toastr.error('Data Gagal Disimpan!');
                     }
                 <?php } ?>
             });
