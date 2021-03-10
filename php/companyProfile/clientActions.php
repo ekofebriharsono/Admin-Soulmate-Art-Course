@@ -4,7 +4,6 @@ $conn = OpenCon();
 
 $link = "http://localhost/Admin-Soulmate-Art-Course/php/companyProfile/image/client/";
 
-
 if (isset($_POST['submitInsertClient'])) {
     $client_name = $_POST['client_name'];
     $description = $_POST['description'];
