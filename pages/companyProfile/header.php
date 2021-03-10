@@ -130,7 +130,6 @@ $conn = OpenCon(); ?>
                                             <tr>
                                                 <th>Header Name</th>
                                                 <th>Sort Name</th>
-                                                <th>Button Link</th>
                                                 <th>Image</th>
                                                 <th>Action</th>
                                             </tr>
@@ -140,21 +139,47 @@ $conn = OpenCon(); ?>
                                             <tr>
                                                 <td><?php echo $row['header_name']; ?></td>
                                                 <td><?php echo $row['sort_name']; ?></td>
-                                                <td><?php echo $row['button_link']; ?></td>
                                                 <td>
                                                     <img style="width:100px;height:100px;"
                                                         src="<?php echo $row['image']; ?>" alt="">
                                                 </td>
                                                 <td>
+                                                    <button class="btn btn-block bg-gradient-warning" name="detail"
+                                                        data-toggle="modal" data-target="#modal-xl">Detail</button>
+                                                    <br>
                                                     <form class="forms-sample"
                                                         action="../../php/companyProfile/headerActions.php"
                                                         method="POST">
                                                         <input type="text" class="form-control" name="id" hidden
                                                             value="<?php echo $row['id_header']; ?>">
-                                                        <button class="badge badge-danger"
+                                                        <button class="btn btn-block bg-gradient-danger"
                                                             name="submitDeleteHeader">Delete</button>
                                                     </form>
                                                 </td>
+                                                <div class="modal fade" id="modal-xl">
+                                                    <div class="modal-dialog modal-xl">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h4 class="modal-title">Extra Large Modal</h4>
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <p>One fine body&hellip;</p>
+                                                            </div>
+                                                            <div class="modal-footer justify-content-between">
+                                                                <button type="button" class="btn btn-default"
+                                                                    data-dismiss="modal">Close</button>
+                                                                <button type="button" class="btn btn-primary">Save
+                                                                    changes</button>
+                                                            </div>
+                                                        </div>
+                                                        <!-- /.modal-content -->
+                                                    </div>
+                                                    <!-- /.modal-dialog -->
+                                                </div>
                                             </tr>
                                             <?php } ?>
                                         </tbody>

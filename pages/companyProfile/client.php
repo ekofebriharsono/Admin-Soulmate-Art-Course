@@ -129,7 +129,6 @@ $conn = OpenCon(); ?>
                                             <tr>
                                                 <th>Client Name</th>
                                                 <th>Description</th>
-                                                <th>Link</th>
                                                 <th>Image</th>
                                                 <th>Action</th>
                                             </tr>
@@ -138,13 +137,14 @@ $conn = OpenCon(); ?>
                                             <?php while($row = mysqli_fetch_array($res)){ ?>
                                             <tr>
                                                 <td><?php echo $row['client_name']; ?></td>
-                                                <td><?php echo $row['description']; ?></td>
-                                                <td><?php echo formatText($row['link']); ?></td>
+                                                <td><?php echo formatText30($row['description']); ?></td>
                                                 <td>
                                                     <img style="width:100px;height:50px;"
                                                         src="<?php echo $row['image']; ?>" alt="">
                                                 </td>
                                                 <td>
+                                                    <button class="badge badge-warning" name="detail">Detail</button>
+
                                                     <form class="forms-sample"
                                                         action="../../php/companyProfile/clientActions.php"
                                                         method="POST">
