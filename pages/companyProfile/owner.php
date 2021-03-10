@@ -127,15 +127,14 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
                                         <table id="example2" class="table table-bordered table-hover">
                                         <thead>
                                                 <tr>
-                                                    <th>Client Name</th>
+                                                    <th>Owner Name</th>
+                                                    <th>Label Owner</th>
                                                     <th>Description</th>
+                                                    <th>Instagram</th>
+                                                    <th>Facebook</th>
+                                                    <th>Whatsapp</th>
                                                     <th>Image</th>
                                                     <th>Action</th>
-                                                    <th>Description</th>
-                                                    <th>Image</th>
-                                                    <th>Action</th>
-                                                    <th>Description</th>
-                                                    
                                                 </tr>
                                             </thead>
                                             <tbody>
