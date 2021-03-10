@@ -63,7 +63,6 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
                         <!-- /.row -->
                         <!-- Main row -->
                         <div class="row">
-
                             <div class="col-md-12">
                                 <!-- general form elements -->
                                 <div class="card card-primary">
@@ -103,162 +102,169 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
                                                 <input type="file" class="form-control" name="image">
                                             </div>
                                         </div>
+                                        <!-- /.card-body -->
+                                        <div class="card-footer">
+                                            <button type="submit" class="btn btn-primary" name="submitInsertOwner">Submit</button>
+                                        </div>
+                                    </form>
                                 </div>
-                                <!-- /.card-body -->
-
-                                <div class="card-footer">
-                                    <button type="submit" class="btn btn-primary" name="submitInsertOwner">Submit</button>
-                                </div>
-                                </form>
+                                <!-- /.card -->
                             </div>
-                            <!-- /.card -->
                         </div>
-
-                    </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h3 class="card-title">Data Owner</h3>
-                                </div>
-                                <!-- /.card-header -->
-                                <div class="card-body">
-                                    <?php
-                                    $sql = "SELECT * FROM `owner`";
-                                    $res = mysqli_query($conn, $sql);
-                                    ?>
-                                    <table id="example2" class="table table-bordered table-hover">
-
-                                        <tbody>
-                                            <?php while ($row = mysqli_fetch_array($res)) { ?>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Data Owner</h3>
+                                    </div>
+                                    <!-- /.card-header -->
+                                    <div class="card-body">
+                                        <?php
+                                            $sql = "SELECT * FROM `owner`";
+                                            $res = mysqli_query($conn, $sql);
+                                        ?>
+                                        <table id="example2" class="table table-bordered table-hover">
+                                        <thead>
                                                 <tr>
-                                                    <td><?php echo $row['id_owner']; ?></td>
-                                                    <td><?php echo $row['owner_name']; ?></td>
-                                                    <td><?php echo $row['label_owner']; ?></td>
-                                                    <td><?php echo $row['owner_descriptions']; ?></td>
-                                                    <td><?php echo $row['instagram']; ?></td>
-                                                    <td><?php echo $row['facebook']; ?></td>
-                                                    <td><?php echo $row['whatsapp']; ?></td>
-                                                    <td>
-                                                        <button data-toggle="modal" data-target="#a<?php echo $row['id_owner']; ?>">
-                                                            <img style="width:100px;height:100px;" src="<?php echo $row['image']; ?>" alt="">
-                                                        </button>
-                                                    </td>
-                                                    <td>
-                                                        <button class="btn btn-block bg-gradient-warning" name="detail" data-toggle="modal" data-target="#b<?php echo $row['id_owner']; ?>">Detail</button>
-                                                    </td>
+                                                    <th>Client Name</th>
+                                                    <th>Description</th>
+                                                    <th>Image</th>
+                                                    <th>Action</th>
+                                                    <th>Description</th>
+                                                    <th>Image</th>
+                                                    <th>Action</th>
+                                                    <th>Description</th>
+                                                    
                                                 </tr>
-                                                <div class="modal fade" id="a<?php echo $row['id_owner']; ?>">
-                                                    <div class="modal-dialog modal-lg">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <h4 class="modal-title">Gambar</h4>
-                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                    <span aria-hidden="true">&times;</span>
-                                                                </button>
-                                                            </div>
-                                                            <div class="modal-body">
-                                                                <center>
-                                                                    <img src="<?php echo $row['image']; ?>" alt="">
-                                                                </center>
-                                                            </div>
+                                            </thead>
+                                            <tbody>
+                                                <?php while ($row = mysqli_fetch_array($res)) { ?>
+                                                    <tr>
+                                                        <td><?php echo $row['owner_name']; ?></td>
+                                                        <td><?php echo $row['label_owner']; ?></td>
+                                                        <td><?php echo $row['owner_descriptions']; ?></td>
+                                                        <td><?php echo $row['instagram']; ?></td>
+                                                        <td><?php echo $row['facebook']; ?></td>
+                                                        <td><?php echo $row['whatsapp']; ?></td>
+                                                        <td>
+                                                            <button data-toggle="modal" data-target="#a<?php echo $row['id_owner']; ?>">
+                                                                <img style="width:100px;height:100px;" src="<?php echo $row['image']; ?>" alt="">
+                                                            </button>
+                                                        </td>
+                                                        <td>
+                                                            <button class="btn btn-block bg-gradient-warning" name="detail" data-toggle="modal" data-target="#b<?php echo $row['id_owner']; ?>">Detail</button>
+                                                        </td>
+                                                    </tr>
+                                                    <div class="modal fade" id="a<?php echo $row['id_owner']; ?>">
+                                                        <div class="modal-dialog modal-lg">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h4 class="modal-title">Gambar</h4>
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <center>
+                                                                        <img src="<?php echo $row['image']; ?>" alt="">
+                                                                    </center>
+                                                                </div>
 
+                                                            </div>
+                                                            <!-- /.modal-content -->
                                                         </div>
-                                                        <!-- /.modal-content -->
+                                                        <!-- /.modal-dialog -->
                                                     </div>
-                                                    <!-- /.modal-dialog -->
-                                                </div>
-                                                <div class="modal fade" id="b<?php echo $row['id_owner']; ?>">
-                                                    <div class="modal-dialog modal-lg">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <h4 class="modal-title">Detail Data</h4>
-                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                    <span aria-hidden="true">&times;</span>
-                                                                </button>
+                                                    <div class="modal fade" id="b<?php echo $row['id_owner']; ?>">
+                                                        <div class="modal-dialog modal-lg">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h4 class="modal-title">Detail Data</h4>
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <form role="form" enctype="multipart/form-data" method="POST" action="../../php/companyProfile/ownerActions.php">
+                                                                        <div class="card-body">
+                                                                            <div class="form-group">
+                                                                                <label for="exampleInputEmail1">Id Owner
+                                                                                    Id</label>
+                                                                                <input type="text" class="form-control" name="id" placeholder="Enter Id owner" value="<?php echo $row['id_owner']; ?>">
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="exampleInputEmail1">Owner Name</label>
+                                                                                <input type="text" class="form-control" name="owner_name" placeholder="Enter owner name" value="<?php echo $row['owner_name']; ?>">
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="exampleInputEmail1">Label Owner</label>
+                                                                                <input type="text" class="form-control" name="label_owner" placeholder="Enter label owner" value="<?php echo $row['label_owner']; ?>">
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="exampleInputEmail1">Descriptions</label>
+                                                                                <input type="text" class="form-control" name="owner_descriptions" placeholder="Enter Descriptions" value="<?php echo $row['owner_descriptions']; ?>">
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="exampleInputEmail1">instagram</label>
+                                                                                <input type="text" class="form-control" name="instagram" placeholder="Enter instagram" value="<?php echo $row['instagram']; ?>">
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="exampleInputEmail1">facebook</label>
+                                                                                <input type="text" class="form-control" name="facebook" placeholder="Enter facebook" value="<?php echo $row['facebook']; ?>">
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="exampleInputEmail1">whatsapp</label>
+                                                                                <input type="text" class="form-control" name="whatsapp" placeholder="Enter whatsapp" value="<?php echo $row['whatsapp']; ?>">
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="exampleInputEmail1">Image || 400x173 px
+                                                                                </label>
+                                                                                <input type="file" class="form-control" name="image">
+                                                                            </div>
+                                                                        </div>
+                                                                        <!-- /.card-body -->
+                                                                        <div class="card-footer">
+                                                                            <button type="submit" class="btn btn-primary" name="submitUpdateOwner">Save Changes</button>
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+                                                                <div class="modal-footer justify-content-between">
+                                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                                    <form class="forms-sample" action="../../php/companyProfile/ownerActions.php" method="POST">
+                                                                        <input type="text" class="form-control" name="id" hidden value="<?php echo $row['id_owner'];
+                                                                                                                                        ?>">
+                                                                        <button class="btn btn-default bg-gradient-danger" name="submitDeleteOwner">Delete</button>
+                                                                    </form>
+                                                                </div>
                                                             </div>
-                                                            <div class="modal-body">
-                                                                <form role="form" enctype="multipart/form-data" method="POST" action="../../php/companyProfile/ownerActions.php">
-                                                                    <div class="card-body">
-                                                                        <div class="form-group">
-                                                                            <label for="exampleInputEmail1">Id Owner
-                                                                                Id</label>
-                                                                            <input type="text" class="form-control" name="id" placeholder="Enter Id owner" value="<?php echo $row['id_owner']; ?>">
-                                                                        </div>
-                                                                        <div class="form-group">
-                                                                            <label for="exampleInputEmail1">Owner Name</label>
-                                                                            <input type="text" class="form-control" name="owner_name" placeholder="Enter owner name" value="<?php echo $row['owner_name']; ?>">
-                                                                        </div>
-                                                                        <div class="form-group">
-                                                                            <label for="exampleInputEmail1">Label Owner</label>
-                                                                            <input type="text" class="form-control" name="label_owner" placeholder="Enter label owner" value="<?php echo $row['label_owner']; ?>">
-                                                                        </div>
-                                                                        <div class="form-group">
-                                                                            <label for="exampleInputEmail1">Descriptions</label>
-                                                                            <input type="text" class="form-control" name="owner_descriptions" placeholder="Enter Descriptions" value="<?php echo $row['owner_descriptions']; ?>">
-                                                                        </div>
-                                                                        <div class="form-group">
-                                                                            <label for="exampleInputEmail1">instagram</label>
-                                                                            <input type="text" class="form-control" name="instagram" placeholder="Enter instagram" value="<?php echo $row['instagram']; ?>">
-                                                                        </div>
-                                                                        <div class="form-group">
-                                                                            <label for="exampleInputEmail1">facebook</label>
-                                                                            <input type="text" class="form-control" name="facebook" placeholder="Enter facebook" value="<?php echo $row['facebook']; ?>">
-                                                                        </div>
-                                                                        <div class="form-group">
-                                                                            <label for="exampleInputEmail1">whatsapp</label>
-                                                                            <input type="text" class="form-control" name="whatsapp" placeholder="Enter whatsapp" value="<?php echo $row['whatsapp']; ?>">
-                                                                        </div>
-                                                                        <div class="form-group">
-                                                                            <label for="exampleInputEmail1">Image || 400x173 px </label>
-                                                                            <input type="file" class="form-control" name="image">
-                                                                        </div>
-                                                                    </div>
-                                                                    <!-- /.card-body -->
-                                                                    <div class="card-footer">
-                                                                        <button type="submit" class="btn btn-primary" name="submitUpdateOwner">Save Changes</button>
-                                                                    </div>
-                                                                </form>
-                                                            </div>
-                                                            <div class="modal-footer justify-content-between">
-                                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                                <form class="forms-sample" action="../../php/companyProfile/ownerActions.php" method="POST">
-                                                                    <input type="text" class="form-control" name="id" hidden value="<?php echo $row['id_owner'];
-                                                                                                                                    ?>">
-                                                                    <button class="btn btn-default bg-gradient-danger" name="submitDeleteOwner">Delete</button>
-                                                                </form>
-                                                            </div>
+                                                            <!-- /.modal-content -->
                                                         </div>
-                                                        <!-- /.modal-content -->
+                                                        <!-- /.modal-dialog -->
                                                     </div>
-                                                    <!-- /.modal-dialog -->
-                                                </div>
-                                            <?php } ?>
-                                        </tbody>
-
-                                    </table>
+                                                <?php } ?>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!-- /.card-body -->
                                 </div>
-                                <!-- /.card-body -->
-
                             </div>
                         </div>
-                    </div>
 
-                    <!-- /.row (main row) -->
-            </div><!-- /.container-fluid -->
-            </section>
-            <!-- /.content -->
-        </div>
-        <!-- /.content-wrapper -->
+                        <!-- /.row (main row) -->
+                    </div><!-- /.container-fluid -->
+                </section>
+                <!-- /.content -->
+            </div>
+            <!-- /.content-wrapper -->
 
-        <?php include '../dashboard/footer.php'; ?>
+            <?php include '../dashboard/footer.php'; ?>
 
-        <!-- Control Sidebar -->
-        <aside class="control-sidebar control-sidebar-dark">
-            <!-- Control sidebar content goes here -->
-        </aside>
-        <!-- /.control-sidebar -->
+            <!-- Control Sidebar -->
+            <aside class="control-sidebar control-sidebar-dark">
+                <!-- Control sidebar content goes here -->
+            </aside>
+            <!-- /.control-sidebar -->
         </div>
         <!-- ./wrapper -->
 
