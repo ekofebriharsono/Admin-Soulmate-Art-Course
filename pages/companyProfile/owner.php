@@ -130,9 +130,6 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
                                                     <th>Owner Name</th>
                                                     <th>Label Owner</th>
                                                     <th>Description</th>
-                                                    <th>Instagram</th>
-                                                    <th>Facebook</th>
-                                                    <th>Whatsapp</th>
                                                     <th>Image</th>
                                                     <th>Action</th>
                                                 </tr>
@@ -143,9 +140,6 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
                                                         <td><?php echo $row['owner_name']; ?></td>
                                                         <td><?php echo $row['label_owner']; ?></td>
                                                         <td><?php echo $row['owner_descriptions']; ?></td>
-                                                        <td><?php echo $row['instagram']; ?></td>
-                                                        <td><?php echo $row['facebook']; ?></td>
-                                                        <td><?php echo $row['whatsapp']; ?></td>
                                                         <td>
                                                             <button data-toggle="modal" data-target="#a<?php echo $row['id_owner']; ?>">
                                                                 <img style="width:100px;height:100px;" src="<?php echo $row['image']; ?>" alt="">
@@ -190,7 +184,7 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
                                                                             <div class="form-group">
                                                                                 <label for="exampleInputEmail1">Id Owner
                                                                                     Id</label>
-                                                                                <input type="text" class="form-control" name="id" placeholder="Enter Id owner" value="<?php echo $row['id_owner']; ?>">
+                                                                                <input type="text" class="form-control" name="id" placeholder="Enter Id owner" value="<?php echo $row['id_owner']; ?>" readonly>
                                                                             </div>
                                                                             <div class="form-group">
                                                                                 <label for="exampleInputEmail1">Owner Name</label>

@@ -169,7 +169,7 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
                                                                                 <div class="form-group">
                                                                                     <label for="exampleInputEmail1">Id Header
                                                                                         Id</label>
-                                                                                    <input type="text" class="form-control" name="id" placeholder="Enter header name" value="<?php echo $row['id_header']; ?>">
+                                                                                    <input type="text" class="form-control" name="id" placeholder="Enter header name" value="<?php echo $row['id_header']; ?>" readonly>
                                                                                 </div>
                                                                                 <div class="form-group">
                                                                                     <label for="exampleInputEmail1">Header
