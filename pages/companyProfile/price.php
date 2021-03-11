@@ -75,19 +75,19 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
                                         <div class="card-body">
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Price Name</label>
-                                                <input type="text" class="form-control" name="price_name" placeholder="Enter price name">
+                                                <input type="text" class="form-control" name="price_name" placeholder="Enter price name" required>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Price</label>
-                                                <input type="text" class="form-control" name="price" placeholder="Enter price">
+                                                <input type="text" class="form-control" name="price" placeholder="Enter price" required>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Price Description</label>
-                                                <input type="text" class="form-control" name="price_descriptions" placeholder="Enter price description">
+                                                <input type="text" class="form-control" name="price_descriptions" placeholder="Enter price description" required>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Image || 278x191 px</label>
-                                                <input type="file" class="form-control" name="image">
+                                                <input type="file" class="form-control" name="image" required>
                                             </div>
                                         </div>
                                 </div>
