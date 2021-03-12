@@ -17,7 +17,7 @@
                       <tr>
                         <td><?php echo $row['id_client']; ?></td>
                         <td><?php echo $row['client_name']; ?></td>
-                        <td><?php echo $row['image']; ?></td>
+                        <td><?php echo $row['image']; //fkmkmkm?></td>
                         <td>
                             <form class="forms-sample" action="../../php/companyProfile/clientActions.php" method="POST">
                                     <input type="text" class="form-control" name="id" hidden value="<?php echo $row['id_client']; ?>"> 
