@@ -126,7 +126,7 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
                                                     <tr>
                                                         <td><?php echo $row['id_event']; ?></td>
                                                         <td><?php echo $row['event_name']; ?></td>
-                                                        <td><?php echo $row['event_descriptions']; ?></td>
+                                                        <td><?php echo formatText50($row['event_descriptions']); ?></td>
                                                         <td><?php echo $row['date']; ?></td>
                                                         <td>
                                                             <button data-toggle="modal" data-target="#a<?php echo $row['id_event']; ?>">

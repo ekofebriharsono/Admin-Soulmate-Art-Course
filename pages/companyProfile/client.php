@@ -191,7 +191,7 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
                                                                         </div>
                                                                         <!-- /.card-body -->
                                                                         <div class="card-footer">
-                                                                            <button type="submit" class="btn btn-primary" name="submitUpdateClient">Submit</button>
+                                                                            <button type="submit" class="btn btn-primary" name="submitUpdateClient">Sace Changes</button>
                                                                         </div>
                                                                     </form>
                                                                 </div>

@@ -120,10 +120,10 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
                                             <?php while ($row = mysqli_fetch_array($res)) { ?>
                                                 <tr>
                                                     <td><?php echo $row['service_name']; ?></td>
-                                                    <td><?php echo $row['service_descriptions']; ?></td>
+                                                    <td><?php echo formatText50($row['service_descriptions']); ?></td>
                                                     <td>
                                                         <button data-toggle="modal" data-target="#a<?php echo $row['id_service']; ?>">
-                                                            <img style="width:100px;height:50px;" src="<?php echo $row['image']; ?>" alt="">
+                                                            <img style="width:80px;height:50px;" src="<?php echo $row['image']; ?>" alt="">
                                                         </button>
                                                     <td>
                                                         <button class="btn btn-block bg-gradient-warning" name="detail" data-toggle="modal" data-target="#b<?php echo $row['id_service']; ?>">Detail</button>
