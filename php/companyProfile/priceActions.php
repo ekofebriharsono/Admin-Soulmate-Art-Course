@@ -70,18 +70,18 @@ if (isset($_POST['submitUpdatePrice'])) {
     }
 
     if (@$image != null) {
-        $sql = "UPDATE `client` SET 
+        $sql = "UPDATE `price` SET 
             `price_name` = '$price_name', 
             `price` = '$price', 
             `price_descriptions` = '$price_descriptions', 
             `image` = '$image' 
-            WHERE `client`.`id_client` =  $id;";
+            WHERE `price`.`id_price` =  $id;";
     } else {
-        $sql = "UPDATE `client` SET 
+        $sql = "UPDATE `price` SET 
             `price_name` = '$price_name', 
             `price` = '$price', 
             `price_descriptions` = '$price_descriptions'
-        WHERE `client`.`id_client` =  $id;";
+        WHERE `price`.`id_price` =  $id;";
     }
 
 
@@ -89,7 +89,8 @@ if (isset($_POST['submitUpdatePrice'])) {
     if ($res) {
         header('Location: ../../pages/companyProfile/price.php?status=203');
     } else {
-        header('Location: ../../pages/companyProfile/price.php?status=500');
+        // header('Location: ../../pages/companyProfile/price.php?status=500');
+        echo $sql;
     }
 }
 

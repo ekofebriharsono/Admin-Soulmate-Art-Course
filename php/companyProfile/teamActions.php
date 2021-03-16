@@ -79,24 +79,24 @@ if(isset($_POST['submitInsertTeam'])){
     }
 
     if (@$image != null) {
-        $sql = "UPDATE `client` SET 
-            `client_name` = '$team_name', 
-            `description` = '$label_team', 
-            `link` = '$team_descriptions', 
-            `image` = '$instagram'
-            `image` = '$facebook'
-            `image` = '$whatsapp'
-            `image` = '$image 
-            WHERE `client`.`id_team` =  $id;";
+        $sql = "UPDATE `team` SET 
+                `team_name` = '$team_name', 
+                `label_team` = '$label_team', 
+                `team_descriptions` = '$team_descriptions', 
+                `instagram` = '$instagram', 
+                `facebook` = '$facebook', 
+                `whatsapp` = '$whatsapp', 
+                `image` = '$image' 
+                WHERE `team`.`id_team` = $id;";
     } else {
-        $sql = "UPDATE `client` SET 
-         `client_name` = '$team_name', 
-            `description` = '$label_team', 
-            `link` = '$team_descriptions', 
-            `image` = '$instagram'
-            `image` = '$facebook'
-            `image` = '$whatsapp
-        WHERE `client`.`id_team` =  $id;";
+        $sql = "UPDATE `team` SET 
+                `team_name` = '$team_name', 
+                `label_team` = '$label_team', 
+                `team_descriptions` = '$team_descriptions', 
+                `instagram` = '$instagram', 
+                `facebook` = '$facebook', 
+                `whatsapp` = '$whatsapp'
+                WHERE `team`.`id_team` = $id;";
     }
 
 
