@@ -213,7 +213,6 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
                                                             </div>
                                                             <!-- /.modal-dialog -->
                                                         </div>
-
                                                     </tr>
                                                 <?php } ?>
                                             </tbody>
