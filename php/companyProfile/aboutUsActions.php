@@ -9,9 +9,9 @@ if(isset($_POST['submitInsertAboutUs'])){
    VALUES (NULL, '$about')";
    $res = mysqli_query($conn, $sql);
    if($res){
-        header('Location: ../../pages/companyProfile/aboutUs.php');
+        header('Location: ../../pages/companyProfile/aboutUs.php?status=201');
    } else {
-    header('Location: ../../pages/companyProfile/aboutUs.php?status=gagal');
+    header('Location: ../../pages/companyProfile/aboutUs.php?status=500');
    }
 
 }
@@ -22,9 +22,23 @@ if(isset($_POST['submitInsertAboutUs'])){
     $sql = "DELETE FROM `about_us` WHERE `about_us`.`id_about_us` = $id";
     $res = mysqli_query($conn, $sql);
     if($res){
-        header('Location: ../../pages/companyProfile/aboutUs.php');
+        header('Location: ../../pages/companyProfile/aboutUs.php?status=202');
     }else {
-        header('Location: ../../pages/companyProfile/aboutUs.php?status=gagal');
+        header('Location: ../../pages/companyProfile/aboutUs.php?status=500');
+    }
+ 
+ }
+
+ if(isset($_POST['submitUpdateAboutUs'])){
+    $id = $_POST['id'];
+    $about = $_POST['about'];
+ 
+    $sql = "UPDATE `about_us` SET `about` = '$about' WHERE `about_us`.`id_about_us` = $id;";
+    $res = mysqli_query($conn, $sql);
+    if($res){
+        header('Location: ../../pages/companyProfile/aboutUs.php?status=203');
+    }else {
+        header('Location: ../../pages/companyProfile/aboutUs.php?status=500');
     }
  
  }

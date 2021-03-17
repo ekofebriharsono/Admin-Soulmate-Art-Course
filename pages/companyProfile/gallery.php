@@ -134,7 +134,7 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
                                                 <?php while ($row = mysqli_fetch_array($res)) { ?>
                                                     <tr>
                                                         <td><?php echo $row['image_name']; ?></td>
-                                                        <td><?php echo $row['image_descriptions']; ?></td>
+                                                        <td><?php echo formatText50($row['image_descriptions']); ?></td>
                                                         <td><?php echo $row['category_name']; ?></td>
                                                         <td>
                                                             <button data-toggle="modal" data-target="#a<?php echo $row['id_gallery']; ?>">

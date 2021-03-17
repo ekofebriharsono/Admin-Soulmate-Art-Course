@@ -125,7 +125,7 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
                                                                 <div class="modal-body">
                                                                     <form role="form" enctype="multipart/form-data" method="POST" action="../../php/companyProfile/galleryCategoryActions.php">
                                                                         <div class="card-body">
-                                                                        <div class="form-group">
+                                                                            <div class="form-group">
                                                                                 <label for="exampleInputEmail1">Id Category</label>
                                                                                 <input type="text" class="form-control" name="id" placeholder="Enter category name" value="<?php echo $row['id_gallery_category']; ?>" required readonly>
                                                                             </div>
