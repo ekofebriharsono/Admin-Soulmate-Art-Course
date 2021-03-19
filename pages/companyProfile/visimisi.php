@@ -25,6 +25,8 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
         <link rel="stylesheet" href="../../plugins/toastr/toastr.min.css">
         <!-- Theme style -->
         <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+        <!-- summernote -->
+        <link rel="stylesheet" href="../../plugins/summernote/summernote-bs4.css">
         <!-- Google Font: Source Sans Pro -->
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     </head>
@@ -63,53 +65,74 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
                         <!-- Main row -->
                         <div class="row">
                             <div class="col-md-6">
-                                <!-- general form elements -->
-                                <div class="card card-primary">
+                                <div class="card card-outline card-info">
                                     <div class="card-header">
-                                        <h3 class="card-title">Input Visi</h3>
+                                        <h3 class="card-title">
+                                            Input Visi
+                                        </h3>
+                                        <!-- tools box -->
+                                        <div class="card-tools">
+                                            <button type="button" class="btn btn-tool btn-sm" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                                                <i class="fas fa-minus"></i></button>
+                                            <button type="button" class="btn btn-tool btn-sm" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+                                                <i class="fas fa-times"></i></button>
+                                        </div>
+                                        <!-- /. tools -->
                                     </div>
                                     <!-- /.card-header -->
-                                    <!-- form start -->
                                     <form role="form" method="POST" action="../../php/companyProfile/visiMisiActions.php">
-                                        <div class="card-body">
-                                            <div class="form-group">
-                                                <label for="exampleInputEmail1">Visi</label>
-                                                <input type="text" class="form-control" name="visi" placeholder="Enter visi" required>
-                                            </div>
-                                        </div>
-                                        <!-- /.card-body -->
 
+                                        <div class="card-body pad">
+                                            <div class="mb-3">
+                                                <textarea class="textarea" name="visi" placeholder="Place some text here" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+
+
+                                            </div>
+                                            <p class="text-sm mb-0">
+                                                Editor <a href="https://github.com/summernote/summernote">Documentation and license
+                                                    information.</a>
+                                            </p>
+                                        </div>
                                         <div class="card-footer">
                                             <button type="submit" class="btn btn-primary" name="submitInsertVisi">Submit</button>
                                         </div>
                                     </form>
                                 </div>
-                                <!-- /.card -->
                             </div>
-
                             <div class="col-md-6">
-                                <!-- general form elements -->
-                                <div class="card card-primary">
+                                <div class="card card-outline card-info">
                                     <div class="card-header">
-                                        <h3 class="card-title">Input Misi</h3>
+                                        <h3 class="card-title">
+                                            Input Misi
+                                        </h3>
+                                        <!-- tools box -->
+                                        <div class="card-tools">
+                                            <button type="button" class="btn btn-tool btn-sm" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                                                <i class="fas fa-minus"></i></button>
+                                            <button type="button" class="btn btn-tool btn-sm" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+                                                <i class="fas fa-times"></i></button>
+                                        </div>
+                                        <!-- /. tools -->
                                     </div>
                                     <!-- /.card-header -->
-                                    <!-- form start -->
                                     <form role="form" method="POST" action="../../php/companyProfile/visiMisiActions.php">
-                                        <div class="card-body">
-                                            <div class="form-group">
-                                                <label for="exampleInputEmail1">Misi</label>
-                                                <input type="text" class="form-control" name="misi" placeholder="Enter misi" required>
-                                            </div>
-                                        </div>
-                                        <!-- /.card-body -->
 
+                                        <div class="card-body pad">
+                                            <div class="mb-3">
+                                                <textarea class="textarea" name="misi" placeholder="Place some text here" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+
+
+                                            </div>
+                                            <p class="text-sm mb-0">
+                                                Editor <a href="https://github.com/summernote/summernote">Documentation and license
+                                                    information.</a>
+                                            </p>
+                                        </div>
                                         <div class="card-footer">
                                             <button type="submit" class="btn btn-primary" name="submitInsertMisi">Submit</button>
                                         </div>
                                     </form>
                                 </div>
-                                <!-- /.card -->
                             </div>
                         </div>
 
@@ -297,6 +320,8 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
         <script src="../../dist/js/adminlte.min.js"></script>
         <!-- AdminLTE for demo purposes -->
         <script src="../../dist/js/demo.js"></script>
+        <!-- Summernote -->
+        <script src="../../plugins/summernote/summernote-bs4.min.js"></script>
         <!-- DataTables -->
         <script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
         <script src="../../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
@@ -304,6 +329,10 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
         <script src="../../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
 
         <script>
+            $(function() {
+                // Summernote
+                $('.textarea').summernote()
+            })
             $(function() {
 
                 $("#example1").DataTable({
