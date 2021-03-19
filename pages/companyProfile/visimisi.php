@@ -85,13 +85,7 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
                                         <div class="card-body pad">
                                             <div class="mb-3">
                                                 <textarea class="textarea" name="visi" placeholder="Place some text here" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
-
-
                                             </div>
-                                            <p class="text-sm mb-0">
-                                                Editor <a href="https://github.com/summernote/summernote">Documentation and license
-                                                    information.</a>
-                                            </p>
                                         </div>
                                         <div class="card-footer">
                                             <button type="submit" class="btn btn-primary" name="submitInsertVisi">Submit</button>
@@ -120,13 +114,7 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
                                         <div class="card-body pad">
                                             <div class="mb-3">
                                                 <textarea class="textarea" name="misi" placeholder="Place some text here" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
-
-
                                             </div>
-                                            <p class="text-sm mb-0">
-                                                Editor <a href="https://github.com/summernote/summernote">Documentation and license
-                                                    information.</a>
-                                            </p>
                                         </div>
                                         <div class="card-footer">
                                             <button type="submit" class="btn btn-primary" name="submitInsertMisi">Submit</button>
@@ -181,9 +169,10 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
                                                                                 <label for="exampleInputEmail1">Id Visi</label>
                                                                                 <input type="text" class="form-control" name="id" placeholder="Enter id visi" value="<?php echo $row['id_visi']; ?>" required readonly>
                                                                             </div>
-                                                                            <div class="form-group">
+
+                                                                            <div class="mb-3">
                                                                                 <label for="exampleInputEmail1">Visi</label>
-                                                                                <input type="text" class="form-control" name="visi" placeholder="Enter visi" value="<?php echo $row['visi']; ?>" required>
+                                                                                <textarea class="textarea" name="visi" placeholder="Place some text here" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"><?php echo $row['visi']; ?></textarea>
                                                                             </div>
                                                                         </div>
                                                                         <!-- /.card-body -->
@@ -258,9 +247,9 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
                                                                                 <label for="exampleInputEmail1">Id Misi</label>
                                                                                 <input type="text" class="form-control" name="id" placeholder="Enter id misi" value="<?php echo $row['id_misi']; ?>" required readonly>
                                                                             </div>
-                                                                            <div class="form-group">
+                                                                            <div class="mb-3">
                                                                                 <label for="exampleInputEmail1">Misi</label>
-                                                                                <input type="text" class="form-control" name="misi" placeholder="Enter misi" value="<?php echo $row['misi']; ?>" required>
+                                                                                <textarea class="textarea" name="misi" placeholder="Place some text here" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"><?php echo $row['misi']; ?></textarea>
                                                                             </div>
                                                                         </div>
                                                                         <!-- /.card-body -->

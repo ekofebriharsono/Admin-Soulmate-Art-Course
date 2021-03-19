@@ -25,6 +25,8 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
         <link rel="stylesheet" href="../../plugins/toastr/toastr.min.css">
         <!-- Theme style -->
         <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+        <!-- summernote -->
+        <link rel="stylesheet" href="../../plugins/summernote/summernote-bs4.css">
         <!-- Google Font: Source Sans Pro -->
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     </head>
@@ -63,7 +65,7 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
                         <!-- Main row -->
                         <div class="row">
 
-                            <div class="col-md-4">
+                            <div class="col-md-12">
                                 <!-- general form elements -->
                                 <div class="card card-primary">
                                     <div class="card-header">
@@ -77,9 +79,9 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
                                                 <label for="exampleInputEmail1">Event Name</label>
                                                 <input type="text" class="form-control" name="event_name" placeholder="Enter event name" required>
                                             </div>
-                                            <div class="form-group">
+                                            <div class="mb-3">
                                                 <label for="exampleInputEmail1">Event Descriptions</label>
-                                                <textarea type="text" class="form-control" name="event_descriptions" placeholder="Enter event descriptions" required></textarea>
+                                                <textarea class="textarea" name="event_descriptions" placeholder="Place some text here" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Event Date</label>
@@ -99,7 +101,7 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
                                 </div>
                                 <!-- /.card -->
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-md-12">
                                 <div class="card">
                                     <div class="card-header">
                                         <h3 class="card-title">Data Event</h3>
@@ -178,9 +180,9 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
                                                                                 <label for="exampleInputEmail1">Event Name</label>
                                                                                 <input type="text" class="form-control" name="event_name" placeholder="Enter event name" value="<?php echo $row['event_name']; ?>" required>
                                                                             </div>
-                                                                            <div class="form-group">
-                                                                                <label for="exampleInputEmail1">Description</label>
-                                                                                <input type="text" class="form-control" name="event_descriptions" placeholder="Enter event descriptions" value="<?php echo $row['event_descriptions']; ?>" required>
+                                                                            <div class="mb-3">
+                                                                                <label for="exampleInputEmail1">Event Descriptions</label>
+                                                                                <textarea class="textarea" name="event_descriptions" placeholder="Place some text here" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"><?php echo $row['event_descriptions']; ?></textarea>
                                                                             </div>
                                                                             <div class="form-group">
                                                                                 <label for="exampleInputEmail1">Date</label>
@@ -188,7 +190,7 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
                                                                             </div>
                                                                             <div class="form-group">
                                                                                 <label for="exampleInputEmail1">Image || 1024x768 px </label>
-                                                                                <input type="file" class="form-control" name="image" >
+                                                                                <input type="file" class="form-control" name="image">
                                                                             </div>
                                                                         </div>
                                                                         <!-- /.card-body -->
@@ -246,6 +248,8 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
         <script src="../../dist/js/adminlte.min.js"></script>
         <!-- AdminLTE for demo purposes -->
         <script src="../../dist/js/demo.js"></script>
+        <!-- Summernote -->
+        <script src="../../plugins/summernote/summernote-bs4.min.js"></script>
         <!-- DataTables -->
         <script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
         <script src="../../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
@@ -253,6 +257,10 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
         <script src="../../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
 
         <script>
+            $(function() {
+                // Summernote
+                $('.textarea').summernote()
+            })
             $(function() {
 
                 $("#example1").DataTable({
