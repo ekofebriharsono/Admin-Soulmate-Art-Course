@@ -94,7 +94,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../companyProfile/galleryCategory.php" class="nav-link active">
+                <a href="../companyProfile/galleryCategory.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Gallery Category</p>
                 </a>
