@@ -52,7 +52,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../companyProfile/client.php" class="nav-link ">
+                <a href="../companyProfile/client.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Client</p>
                 </a>
@@ -70,7 +70,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../companyProfile/event.php" class="nav-link active">
+                <a href="../companyProfile/event.php" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Event</p>
                 </a>
@@ -94,7 +94,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../companyProfile/galleryCategory.php" class="nav-link">
+                <a href="../companyProfile/galleryCategory.php" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Gallery Category</p>
                 </a>
@@ -112,7 +112,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../companyProfile/video.php" class="nav-link">
+                <a href="../companyProfile/video.php" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Video</p>
                 </a>

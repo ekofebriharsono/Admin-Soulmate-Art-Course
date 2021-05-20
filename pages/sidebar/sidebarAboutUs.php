@@ -106,6 +106,18 @@
                 </a>
               </li>
               <li class="nav-item">
+                <a href="../companyProfile/videoCategory.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Video Category</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="../companyProfile/video.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Video</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="../companyProfile/aboutUs.php" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>About Us</p>
