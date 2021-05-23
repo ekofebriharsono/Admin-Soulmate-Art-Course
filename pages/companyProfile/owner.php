@@ -99,7 +99,7 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Image || 600x600 px</label>
-                                                <input type="file" class="form-control" name="image" required>
+                                                <input type="file" class="form-control" name="image">
                                             </div>
                                         </div>
                                         <!-- /.card-body -->

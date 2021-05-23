@@ -25,6 +25,8 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
         <link rel="stylesheet" href="../../plugins/toastr/toastr.min.css">
         <!-- Theme style -->
         <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+        <!-- summernote -->
+        <link rel="stylesheet" href="../../plugins/summernote/summernote-bs4.css">
         <!-- Google Font: Source Sans Pro -->
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     </head>
@@ -72,142 +74,142 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
                                     <!-- /.card-header -->
                                     <!-- form start -->
                                     <form role="form" enctype="multipart/form-data" method="POST" action="../../php/companyProfile/serviceActions.php">
+
                                         <div class="card-body">
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Service Name</label>
                                                 <input type="text" class="form-control" name="service_name" placeholder="Enter service name">
                                             </div>
-                                            <div class="form-group">
-                                                <label for="exampleInputEmail1">Service Description</label>
-                                                <input type="text" class="form-control" name="service_descriptions" placeholder="Enter service description">
+                                            <div class="mb-3">
+                                                <label for="exampleInputEmail1">Service Descriptions</label>
+                                                <textarea class="textarea" name="service_descriptions" placeholder="Place some text here" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
                                             </div>
                                             <div class="form-group">
-                                                <label for="exampleInputEmail1">Image || 278x191 px</label>
+                                                <label for="exampleInputEmail1">Image || 250x250 px</label>
                                                 <input type="file" class="form-control" name="image">
                                             </div>
                                         </div>
-                                </div>
-                                <!-- /.card-body -->
 
-                                <div class="card-footer">
-                                    <button type="submit" class="btn btn-primary" name="submitInsertService">Submit</button>
+                                        <!-- /.card-body -->
+
+                                        <div class="card-footer">
+                                            <button type="submit" class="btn btn-primary" name="submitInsertService">Submit</button>
+                                        </div>
+                                    </form>
                                 </div>
-                                </form>
+                                <!-- /.card -->
                             </div>
-                            <!-- /.card -->
-                        </div>
-                        <div class="col-md-12">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h3 class="card-title">Data Service</h3>
-                                </div>
-                                <!-- /.card-header -->
-                                <div class="card-body">
-                                    <?php
-                                    $sql = "SELECT * FROM `service`";
-                                    $res = mysqli_query($conn, $sql);
-                                    ?>
-                                    <table id="example2" class="table table-bordered table-hover">
-                                        <thead>
-                                            <tr>
-                                                <th>Service Name</th>
-                                                <th>Service Description</th>
-                                                <th>Image</th>
-                                                <th>Action</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php while ($row = mysqli_fetch_array($res)) { ?>
+                            <div class="col-md-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Data Service</h3>
+                                    </div>
+                                    <!-- /.card-header -->
+                                    <div class="card-body">
+                                        <?php
+                                        $sql = "SELECT * FROM `service`";
+                                        $res = mysqli_query($conn, $sql);
+                                        ?>
+                                        <table id="example2" class="table table-bordered table-hover">
+                                            <thead>
                                                 <tr>
-                                                    <td><?php echo $row['service_name']; ?></td>
-                                                    <td><?php echo formatText50($row['service_descriptions']); ?></td>
-                                                    <td>
-                                                        <button data-toggle="modal" data-target="#a<?php echo $row['id_service']; ?>">
-                                                            <img style="width:80px;height:50px;" src="<?php echo $row['image']; ?>" alt="">
-                                                        </button>
-                                                    <td>
-                                                        <button class="btn btn-block bg-gradient-warning" name="detail" data-toggle="modal" data-target="#b<?php echo $row['id_service']; ?>">Detail</button>
-                                                    </td>
+                                                    <th>Service Name</th>
+                                                    <th>Service Description</th>
+                                                    <th>Image</th>
+                                                    <th>Action</th>
                                                 </tr>
-                                                <div class="modal fade" id="a<?php echo $row['id_service']; ?>">
-                                                    <div class="modal-dialog modal-lg">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <h4 class="modal-title">Gambar</h4>
-                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                    <span aria-hidden="true">&times;</span>
-                                                                </button>
-                                                            </div>
-                                                            <div class="modal-body">
-                                                                <center>
-                                                                    <img src="<?php echo $row['image']; ?>" alt="">
-                                                                </center>
-                                                            </div>
+                                            </thead>
+                                            <tbody>
+                                                <?php while ($row = mysqli_fetch_array($res)) { ?>
+                                                    <tr>
+                                                        <td><?php echo $row['service_name']; ?></td>
+                                                        <td><?php echo formatText50($row['service_descriptions']); ?></td>
+                                                        <td>
+                                                            <button data-toggle="modal" data-target="#a<?php echo $row['id_service']; ?>">
+                                                                <img style="width:80px;height:50px;" src="<?php echo $row['image']; ?>" alt="">
+                                                            </button>
+                                                        <td>
+                                                            <button class="btn btn-block bg-gradient-warning" name="detail" data-toggle="modal" data-target="#b<?php echo $row['id_service']; ?>">Detail</button>
+                                                        </td>
+                                                    </tr>
+                                                    <div class="modal fade" id="a<?php echo $row['id_service']; ?>">
+                                                        <div class="modal-dialog modal-lg">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h4 class="modal-title">Gambar</h4>
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <center>
+                                                                        <img src="<?php echo $row['image']; ?>" alt="">
+                                                                    </center>
+                                                                </div>
 
+                                                            </div>
+                                                            <!-- /.modal-content -->
                                                         </div>
-                                                        <!-- /.modal-content -->
+                                                        <!-- /.modal-dialog -->
                                                     </div>
-                                                    <!-- /.modal-dialog -->
-                                                </div>
-                                                <div class="modal fade" id="b<?php echo $row['id_service']; ?>">
-                                                    <div class="modal-dialog modal-lg">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <h4 class="modal-title">Detail Data</h4>
-                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                    <span aria-hidden="true">&times;</span>
-                                                                </button>
+                                                    <div class="modal fade" id="b<?php echo $row['id_service']; ?>">
+                                                        <div class="modal-dialog modal-lg">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h4 class="modal-title">Detail Data</h4>
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <form role="form" enctype="multipart/form-data" method="POST" action="../../php/companyProfile/serviceActions.php">
+                                                                        <div class="card-body">
+                                                                            <div class="form-group">
+                                                                                <label for="exampleInputEmail1">Id Service
+                                                                                    Id</label>
+                                                                                <input type="text" class="form-control" name="id" placeholder="Enter Id Service" value="<?php echo $row['id_service']; ?>" readonly required>
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="exampleInputEmail1">Service Name</label>
+                                                                                <input type="text" class="form-control" name="service_name" placeholder="Enter service name" value="<?php echo $row['service_name']; ?>" required>
+                                                                            </div>
+                                                                            <div class="mb-3">
+                                                                                <label for="exampleInputEmail1">Service Descriptions</label>
+                                                                                <textarea class="textarea" name="service_descriptions" placeholder="Place some text here" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"><?php echo $row['service_descriptions']; ?></textarea>
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="exampleInputEmail1">Image || 278x191 px</label>
+                                                                                <input type="file" class="form-control" name="image">
+                                                                            </div>
+                                                                        </div>
+                                                                        <!-- /.card-body -->
+                                                                        <div class="card-footer">
+                                                                            <button type="submit" class="btn btn-primary" name="submitUpdateService">Save Changes</button>
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+                                                                <div class="modal-footer justify-content-between">
+                                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                                    <form class="forms-sample" action="../../php/companyProfile/serviceActions.php" method="POST">
+                                                                        <input type="text" class="form-control" name="id" hidden value="<?php echo $row['id_service'];
+                                                                                                                                        ?>">
+                                                                        <button class="btn btn-default bg-gradient-danger" name="submitDeleteService">Delete</button>
+                                                                    </form>
+                                                                </div>
                                                             </div>
-                                                            <div class="modal-body">
-                                                                <form role="form" enctype="multipart/form-data" method="POST" action="../../php/companyProfile/serviceActions.php">
-                                                                    <div class="card-body">
-                                                                        <div class="form-group">
-                                                                            <label for="exampleInputEmail1">Id Service
-                                                                                Id</label>
-                                                                            <input type="text" class="form-control" name="id" placeholder="Enter Id Service" value="<?php echo $row['id_service']; ?>" readonly required>
-                                                                        </div>
-                                                                        <div class="form-group">
-                                                                            <label for="exampleInputEmail1">Service Name</label>
-                                                                            <input type="text" class="form-control" name="service_name" placeholder="Enter service name" value="<?php echo $row['service_name']; ?>" required>
-                                                                        </div>
-                                                                        <div class="form-group">
-                                                                            <label for="exampleInputEmail1">Service Description</label>
-                                                                            <input type="text" class="form-control" name="service_descriptions" placeholder="Enter service description" value="<?php echo $row['service_descriptions']; ?>" required>
-                                                                        </div>
-                                                                        <div class="form-group">
-                                                                            <label for="exampleInputEmail1">Image || 278x191 px</label>
-                                                                            <input type="file" class="form-control" name="image">
-                                                                        </div>
-                                                                    </div>
-                                                                    <!-- /.card-body -->
-                                                                    <div class="card-footer">
-                                                                        <button type="submit" class="btn btn-primary" name="submitUpdateService">Save Changes</button>
-                                                                    </div>
-                                                                </form>
-                                                            </div>
-                                                            <div class="modal-footer justify-content-between">
-                                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                                <form class="forms-sample" action="../../php/companyProfile/serviceActions.php" method="POST">
-                                                                    <input type="text" class="form-control" name="id" hidden value="<?php echo $row['id_service'];
-                                                                                                                                    ?>">
-                                                                    <button class="btn btn-default bg-gradient-danger" name="submitDeleteService">Delete</button>
-                                                                </form>
-                                                            </div>
+                                                            <!-- /.modal-content -->
                                                         </div>
-                                                        <!-- /.modal-content -->
+                                                        <!-- /.modal-dialog -->
                                                     </div>
-                                                    <!-- /.modal-dialog -->
-                                                </div>
-                                            <?php } ?>
-                                        </tbody>
-                                    </table>
+                                                <?php } ?>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!-- /.card-body -->
                                 </div>
-                                <!-- /.card-body -->
                             </div>
-                        </div>
-
-                        <!-- /.row (main row) -->
-                    </div><!-- /.container-fluid -->
+                            <!-- /.row (main row) -->
+                        </div><!-- /.container-fluid -->
                 </section>
                 <!-- /.content -->
             </div>
@@ -235,6 +237,8 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
         <script src="../../dist/js/adminlte.min.js"></script>
         <!-- AdminLTE for demo purposes -->
         <script src="../../dist/js/demo.js"></script>
+        <!-- Summernote -->
+        <script src="../../plugins/summernote/summernote-bs4.min.js"></script>
         <!-- DataTables -->
         <script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
         <script src="../../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
@@ -242,6 +246,10 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
         <script src="../../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
 
         <script>
+            $(function() {
+                // Summernote
+                $('.textarea').summernote()
+            })
             $(function() {
 
                 $("#example1").DataTable({

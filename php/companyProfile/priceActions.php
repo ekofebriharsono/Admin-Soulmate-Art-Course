@@ -2,7 +2,10 @@
 include '../koneksi.php';
 $conn = OpenCon();
 
-$link = "http://localhost/Admin-Soulmate-Art-Course/php/companyProfile/image/price/";
+$host = "http://localhost/admin-soulmate-art-course/";
+
+$default_image = $host . "dist/img/image-default.png";
+$link = $host . "php/companyProfile/image/price/";
 
 if (isset($_POST['submitInsertPrice'])) {
     $price_name = $_POST['price_name'];
@@ -24,6 +27,10 @@ if (isset($_POST['submitInsertPrice'])) {
     if (in_array($ekstensi, $ekstensi_diperbolehkan) === true) {
         move_uploaded_file($file_tmp, 'image/price/' . $name_db);
         $image = $link . $name_db;
+    }
+
+    if (@$image == null) {
+        $image = $default_image;
     }
 
     $sql = "INSERT INTO `price` (`id_price`, `price_name`, `price`, `price_descriptions`, `image`) VALUES (NULL, '$price_name', '$price','$price_descriptions','$image')";

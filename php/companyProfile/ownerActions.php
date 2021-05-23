@@ -2,7 +2,10 @@
 include '../koneksi.php';
 $conn = OpenCon();
 
-$link = "http://localhost/Admin-Soulmate-Art-Course/php/companyProfile/image/owner/";
+$host = "http://localhost/admin-soulmate-art-course/";
+
+$default_image = $host . "dist/img/image-default.png";
+$link = $host . "php/companyProfile/image/owner/";
 
 if (isset($_POST['submitInsertOwner'])) {
   $owner_name = $_POST['owner_name'];
@@ -27,6 +30,10 @@ if (isset($_POST['submitInsertOwner'])) {
   if (in_array($ekstensi, $ekstensi_diperbolehkan) === true) {
     move_uploaded_file($file_tmp, 'image/owner/' . $name_db);
     $image = $link . $name_db;
+  }
+
+  if (@$image == null) {
+    $image = $default_image;
   }
 
   $sql = "INSERT INTO `owner` (`id_owner`, `owner_name`, `label_owner`, `owner_descriptions`, `instagram`, `facebook`, `whatsapp`, `image`) 
