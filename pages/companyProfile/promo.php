@@ -12,7 +12,7 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Admin | Price</title>
+        <title>Admin | Promo</title>
         <!-- Tell the browser to be responsive to screen width -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Font Awesome -->
@@ -29,13 +29,74 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
         <link rel="stylesheet" href="../../plugins/summernote/summernote-bs4.css">
         <!-- Google Font: Source Sans Pro -->
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+        <style>
+            .switch {
+                position: relative;
+                display: inline-block;
+                width: 60px;
+                height: 34px;
+            }
+
+            .switch input {
+                opacity: 0;
+                width: 0;
+                height: 0;
+            }
+
+            .slider {
+                position: absolute;
+                cursor: pointer;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: #ccc;
+                -webkit-transition: .4s;
+                transition: .4s;
+            }
+
+            .slider:before {
+                position: absolute;
+                content: "";
+                height: 26px;
+                width: 26px;
+                left: 4px;
+                bottom: 4px;
+                background-color: white;
+                -webkit-transition: .4s;
+                transition: .4s;
+            }
+
+            input:checked+.slider {
+                background-color: #2196F3;
+            }
+
+            input:focus+.slider {
+                box-shadow: 0 0 1px #2196F3;
+            }
+
+            input:checked+.slider:before {
+                -webkit-transform: translateX(26px);
+                -ms-transform: translateX(26px);
+                transform: translateX(26px);
+            }
+
+            .slider.round {
+                border-radius: 34px;
+            }
+
+            .slider.round:before {
+                border-radius: 50%;
+            }
+        </style>
     </head>
 
     <body class="hold-transition sidebar-mini layout-fixed">
         <div class="wrapper">
 
             <?php include '../dashboard/navbar.php'; ?>
-            <?php include '../sidebar/sidebarPrice.php'; ?>
+            <?php include '../sidebar/sidebarPromo.php'; ?>
 
             <!-- Content Wrapper. Contains page content -->
             <div class="content-wrapper">
@@ -49,7 +110,7 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
                             <div class="col-sm-6">
                                 <ol class="breadcrumb float-sm-right">
                                     <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                    <li class="breadcrumb-item active">Price</li>
+                                    <li class="breadcrumb-item active">Promo</li>
                                 </ol>
                             </div><!-- /.col -->
                         </div><!-- /.row -->
@@ -69,46 +130,33 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
                                 <!-- general form elements -->
                                 <div class="card card-primary">
                                     <div class="card-header">
-                                        <h3 class="card-title">Input Price</h3>
+                                        <h3 class="card-title">Input Promo</h3>
                                     </div>
                                     <!-- /.card-header -->
                                     <!-- form start -->
-                                    <form role="form" enctype="multipart/form-data" method="POST" action="../../php/companyProfile/priceActions.php">
+                                    <form role="form" enctype="multipart/form-data" method="POST" action="../../php/companyProfile/promoActions.php">
                                         <div class="card-body">
                                             <div class="form-group">
-                                                <label for="exampleInputEmail1">Price Name</label>
-                                                <input type="text" class="form-control" name="price_name" placeholder="Enter price name" required>
+                                                <label for="exampleInputEmail1">Promo Name</label>
+                                                <input type="text" class="form-control" name="name" placeholder="Enter promo name" required>
                                             </div>
                                             <div class="form-group">
-                                                <label for="exampleInputEmail1">Price</label>
-                                                <input type="text" class="form-control" name="price" placeholder="Enter price" required>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="exampleInputEmail1">Price Descriptions</label>
-                                                <textarea class="textarea" name="price_descriptions" placeholder="Place some text here" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;" required></textarea>
+                                                <label for="exampleInputEmail1">From Date</label>
+                                                <input type="date" class="form-control" name="from_date" placeholder="Enter from date" required>
                                             </div>
                                             <div class="form-group">
-                                                <label for="exampleInputEmail1">Category</label>
-                                                <select name="id_price_category" required>
-                                                    <?php
-                                                    $sql = "SELECT * FROM `price_category`";
-                                                    $res = mysqli_query($conn, $sql);
-                                                    while ($row = mysqli_fetch_array($res)) {
-                                                    ?>
-                                                        <option value="<?php echo $row['id_price_category']; ?>">
-                                                            <?php echo $row['category_name']; ?></option>
-                                                    <?php } ?>
-                                                </select>
+                                                <label for="exampleInputEmail1">End Date</label>
+                                                <input type="date" class="form-control" name="end_date" placeholder="Enter end date" required>
                                             </div>
                                             <div class="form-group">
-                                                <label for="exampleInputEmail1">Image || 278x191 px</label>
+                                                <label for="exampleInputEmail1">Image || 1024x768 px</label>
                                                 <input type="file" class="form-control" name="image">
                                             </div>
                                         </div>
                                         <!-- /.card-body -->
 
                                         <div class="card-footer">
-                                            <button type="submit" class="btn btn-primary" name="submitInsertPrice">Submit</button>
+                                            <button type="submit" class="btn btn-primary" name="submitInsertPromo">Submit</button>
                                         </div>
                                     </form>
                                 </div>
@@ -117,21 +165,22 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
                             <div class="col-md-12">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h3 class="card-title">Data Price</h3>
+                                        <h3 class="card-title">Data Promo</h3>
                                     </div>
                                     <!-- /.card-header -->
                                     <div class="card-body">
                                         <?php
-                                        $sql = "SELECT price.id_price, price.price_name, price.price, price.price_descriptions, price.image, price_category.id_price_category, price_category.category_name FROM price JOIN price_category ON price.id_price_category = price_category.id_price_category";
+                                        $sql = "SELECT * FROM `promo`";
                                         $res = mysqli_query($conn, $sql);
                                         ?>
                                         <table id="example2" class="table table-bordered table-hover">
                                             <thead>
                                                 <tr>
-                                                    <th>Price Name</th>
-                                                    <th>Category Name</th>
-                                                    <th>Price</th>
-                                                    <th>Price Description</th>
+                                                    <th>Id</th>
+                                                    <th>Promo Name</th>
+                                                    <th>From Date</th>
+                                                    <th>End Date</th>
+                                                    <th>Status</th>
                                                     <th>Image</th>
                                                     <th>Action</th>
                                                 </tr>
@@ -139,19 +188,29 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
                                             <tbody>
                                                 <?php while ($row = mysqli_fetch_array($res)) { ?>
                                                     <tr>
-                                                        <td><?php echo $row['price_name']; ?></td>
-                                                        <td><?php echo $row['category_name']; ?></td>
-                                                        <td><?php echo $row['price']; ?></td>
-                                                        <td><?php echo $row['price_descriptions']; ?></td>
+                                                        <td><?php echo $row['id_promo']; ?></td>
+                                                        <td><?php echo $row['name']; ?></td>
+                                                        <td><?php echo $row['from_date']; ?></td>
+                                                        <td><?php echo $row['end_date']; ?></td>
                                                         <td>
-                                                            <button data-toggle="modal" data-target="#a<?php echo $row['id_price']; ?>">
-                                                                <img style="width:40px;height:50px;" src="<?php echo $row['image']; ?>" alt="">
+                                                            <?php
+                                                            $status = $row['status'];
+                                                            if ($status == '0') { ?>
+                                                                <label for="" class="bg-gradient-danger">Not Activated</label>
+                                                            <?php  } else if ($status == '1') { ?>
+                                                                <label for="" class="bg-gradient-success">Activated</label>
+                                                            <?php } ?>
+                                                        </td>
+                                                        <td>
+                                                            <button data-toggle="modal" data-target="#a<?php echo $row['id_promo']; ?>">
+                                                                <img style="width:50px;height:40px;" src="<?php echo $row['image']; ?>" alt="">
                                                             </button>
+                                                        </td>
                                                         <td>
-                                                            <button class="btn btn-block bg-gradient-warning" name="detail" data-toggle="modal" data-target="#b<?php echo $row['id_price']; ?>">Detail</button>
+                                                            <button class="btn btn-block bg-gradient-warning" name="detail" data-toggle="modal" data-target="#b<?php echo $row['id_promo']; ?>">Detail</button>
                                                         </td>
                                                     </tr>
-                                                    <div class="modal fade" id="a<?php echo $row['id_price']; ?>">
+                                                    <div class="modal fade" id="a<?php echo $row['id_promo']; ?>">
                                                         <div class="modal-dialog modal-lg">
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
@@ -162,14 +221,15 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
                                                                 </div>
                                                                 <div class="modal-body">
                                                                     <center>
-                                                                        <img src="<?php echo $row['image']; ?>" alt="">
+                                                                        <img style="width:500px;height:400px;" src="<?php echo $row['image']; ?>" alt="">
                                                                     </center>
                                                                 </div>
                                                             </div>
+                                                            <!-- /.modal-content -->
                                                         </div>
-                                                        <!-- /.modal-content -->
+                                                        <!-- /.modal-dialog -->
                                                     </div>
-                                                    <div class="modal fade" id="b<?php echo $row['id_price']; ?>">
+                                                    <div class="modal fade" id="b<?php echo $row['id_promo']; ?>">
                                                         <div class="modal-dialog modal-lg">
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
@@ -179,67 +239,54 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
                                                                     </button>
                                                                 </div>
                                                                 <div class="modal-body">
-                                                                    <form role="form" enctype="multipart/form-data" method="POST" action="../../php/companyProfile/priceActions.php">
+                                                                    <form role="form" enctype="multipart/form-data" method="POST" action="../../php/companyProfile/promoActions.php">
                                                                         <div class="card-body">
                                                                             <div class="form-group">
-                                                                                <label for="exampleInputEmail1">Id Price
-                                                                                    Id</label>
-                                                                                <input type="text" class="form-control" name="id" placeholder="Enter Id Price" value="<?php echo $row['id_price']; ?>" readonly required>
+                                                                                <label for="exampleInputEmail1">Id Promo</label>
+                                                                                <input type="text" class="form-control" name="id" placeholder="Enter Id event" value="<?php echo $row['id_promo']; ?>" readonly required>
                                                                             </div>
-                                                                            <div class="card-body">
-                                                                                <div class="form-group">
-                                                                                    <label for="exampleInputEmail1">Price Name</label>
-                                                                                    <input type="text" class="form-control" name="price_name" placeholder="Enter price name" value="<?php echo $row['price_name']; ?>" required>
-                                                                                </div>
-                                                                                <div class="form-group">
-                                                                                    <label for="exampleInputEmail1">Price</label>
-                                                                                    <input type="text" class="form-control" name="price" placeholder="Enter price" value="<?php echo $row['price']; ?>" required>
-                                                                                </div>
-                                                                                <div class="mb-3">
-                                                                                    <label for="exampleInputEmail1">Price Descriptions</label>
-                                                                                    <textarea class="textarea" name="price_descriptions" placeholder="Place some text here" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;" required><?php echo $row['price_descriptions']; ?></textarea>
-                                                                                </div>
-                                                                                <div class="form-group">
-                                                                                    <label for="exampleInputEmail1">Category</label>
-                                                                                    <select name="id_price_category" required>
-                                                                                        <?php
-                                                                                        $id = $row['id_price_category'];
-                                                                                        $sql1 = "SELECT * FROM `price_category`";
-                                                                                        $res1 = mysqli_query($conn, $sql1);
-                                                                                        while ($rows = mysqli_fetch_array($res1)) {
-                                                                                            $id1 =  $rows['id_price_category'];
-                                                                                            if ($id == $id1) { ?>
-                                                                                                <option value="<?php echo $rows['id_price_category']; ?>" selected>
-                                                                                                    <?php echo $rows['category_name']; ?>
-                                                                                                </option>
-                                                                                            <?php
-                                                                                            } else {
-                                                                                            ?>
-                                                                                                <option value="<?php echo $rows['id_price_category']; ?>">
-                                                                                                    <?php echo $rows['category_name']; ?>
-                                                                                                </option>
-                                                                                        <?php }
-                                                                                        } ?>
-                                                                                    </select>
-                                                                                </div>
-                                                                                <div class="form-group">
-                                                                                    <label for="exampleInputEmail1">Image || 278x191 px</label>
-                                                                                    <input type="file" class="form-control" name="image">
-                                                                                </div>
+                                                                            <div class="form-group">
+                                                                                <label for="exampleInputEmail1">Promo Name</label>
+                                                                                <input type="text" class="form-control" name="name" placeholder="Enter event name" value="<?php echo $row['name']; ?>" required>
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="exampleInputEmail1">From Date</label>
+                                                                                <input type="date" class="form-control" name="from_date" placeholder="Enter date" value="<?php echo $row['from_date']; ?>" required>
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="exampleInputEmail1">End Date</label>
+                                                                                <input type="date" class="form-control" name="end_date" placeholder="Enter date" value="<?php echo $row['end_date']; ?>" required>
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="exampleInputEmail1">Status</label>
+                                                                                <label class="switch">
+                                                                                    <?php
+                                                                                    $status = $row['status'];
+                                                                                    if ($status == '0') { ?>
+                                                                                        <input name="status" type="checkbox">
+                                                                                    <?php  } else if ($status == '1') { ?>
+                                                                                        <input name="status" type="checkbox" checked>
+                                                                                    <?php } ?>
+                                                                                    <span class="slider round"></span>
+                                                                                </label>
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="exampleInputEmail1">Image || 1024x768 px </label>
+                                                                                <input type="file" class="form-control" name="image">
                                                                             </div>
                                                                         </div>
                                                                         <!-- /.card-body -->
                                                                         <div class="card-footer">
-                                                                            <button type="submit" class="btn btn-primary" name="submitUpdatePrice">Save Changes</button>
+                                                                            <button type="submit" class="btn btn-primary" name="submitUpdatePromo">Save Changes</button>
                                                                         </div>
                                                                     </form>
                                                                 </div>
                                                                 <div class="modal-footer justify-content-between">
                                                                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                                    <form class="forms-sample" action="../../php/companyProfile/priceActions.php" method="POST">
-                                                                        <input type="text" class="form-control" name="id" hidden value="<?php echo $row['id_price'];
+                                                                    <form class="forms-sample" action="../../php/companyProfile/promoActions.php" method="POST">
+                                                                        <input type="text" class="form-control" name="id" hidden value="<?php echo $row['id_promo'];
                                                                                                                                         ?>">
-                                                                        <button class="btn btn-default bg-gradient-danger" name="submitDeletePrice">Delete</button>
+                                                                        <button class="btn btn-default bg-gradient-danger" name="submitDeletePromo">Delete</button>
                                                                     </form>
                                                                 </div>
                                                             </div>

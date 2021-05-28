@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 23, 2021 at 08:23 PM
+-- Generation Time: May 28, 2021 at 06:34 PM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 7.4.19
 
@@ -58,7 +58,8 @@ CREATE TABLE `client` (
 --
 
 INSERT INTO `client` (`id_client`, `client_name`, `description`, `link`, `image`) VALUES
-(9, 'Omah Semangat', 'Omah Semangat', 'https://www.instagram.com/omah.semangart/?igshid=1o8yq6lctxatf', 'http://localhost/admin-soulmate-art-course/dist/img/image-default.png');
+(14, 'Soulmate ', 'Soulmate ', 'https://www.google.com/', 'http://localhost/admin-soulmate-art-course/dist/img/image-default.png'),
+(15, 'Soulmate ', 'Soulmate ', 'https://www.google.com/', 'http://localhost/admin-soulmate-art-course/dist/img/image-default.png');
 
 -- --------------------------------------------------------
 
@@ -128,7 +129,9 @@ CREATE TABLE `gallery` (
 
 INSERT INTO `gallery` (`id_gallery`, `id_gallery_category`, `image_name`, `image_descriptions`, `image`) VALUES
 (5, 3, 'gitar', 'gitar nihh', 'http://localhost/Admin-Soulmate-Art-Course/php/companyProfile/image/gallery/2021-02-0507-40-22pmportfolio-1.jpg'),
-(6, 4, 'Biola', 'biola nihh', 'http://localhost/Admin-Soulmate-Art-Course/php/companyProfile/image/gallery/2021-02-0507-56-15pmportfolio-7.jpg');
+(6, 4, 'Biola', 'biola nihh', 'http://localhost/Admin-Soulmate-Art-Course/php/companyProfile/image/gallery/2021-02-0507-56-15pmportfolio-7.jpg'),
+(7, 5, 'qwe', 'asd', 'http://localhost/Admin-Soulmate-Art-Course/php/companyProfile/image/gallery/2021-05-2805-24-47am2021-02-0507-40-22pmportfolio-1.jpg'),
+(8, 6, 'rty', 'rty', 'http://localhost/Admin-Soulmate-Art-Course/php/companyProfile/image/gallery/2021-05-2805-24-57am2021-03-1710-19-30pm2021-02-0507-56-15pmportfolio-7.jpg');
 
 -- --------------------------------------------------------
 
@@ -147,7 +150,9 @@ CREATE TABLE `gallery_category` (
 
 INSERT INTO `gallery_category` (`id_gallery_category`, `category_name`) VALUES
 (3, 'Acara'),
-(4, 'Bimbingan');
+(4, 'Bimbingan'),
+(5, 'Private'),
+(6, 'Group');
 
 -- --------------------------------------------------------
 
@@ -168,7 +173,7 @@ CREATE TABLE `header` (
 --
 
 INSERT INTO `header` (`id_header`, `header_name`, `sort_name`, `button_link`, `image`) VALUES
-(20, 'Soulmate Art Course', 'Sambung rasa antar hati melalui nada, irama dan harmoni.', 'https://www.google.com/', 'http://localhost/Admin-Soulmate-Art-Course/php/companyProfile/image/header/2021-02-0402-31-35pmhero-img.png');
+(20, 'Soulmate Art Course', 'Sambung rasa antar hati melalui nada, irama dan harmoni.', 'https://api.whatsapp.com/send?phone=6287860353550&text=Hello%20Soulmate,%20', 'http://localhost/Admin-Soulmate-Art-Course/php/companyProfile/image/header/2021-02-0402-31-35pmhero-img.png');
 
 -- --------------------------------------------------------
 
@@ -221,6 +226,7 @@ INSERT INTO `owner` (`id_owner`, `owner_name`, `label_owner`, `owner_description
 
 CREATE TABLE `price` (
   `id_price` int(11) NOT NULL,
+  `id_price_category` int(11) NOT NULL,
   `price_name` varchar(50) NOT NULL,
   `price` varchar(30) NOT NULL,
   `price_descriptions` text NOT NULL,
@@ -231,11 +237,54 @@ CREATE TABLE `price` (
 -- Dumping data for table `price`
 --
 
-INSERT INTO `price` (`id_price`, `price_name`, `price`, `price_descriptions`, `image`) VALUES
-(11, 'Private Class', '150.000', '<ul><li>4x Pertemuan</li><li>Pinjaman Alat Musik</li></ul>', 'http://localhost/admin-soulmate-art-course/dist/img/image-default.png'),
-(12, 'Group Class', '449.000', '<ul><li>4x Pertemuan</li><li>Pinjaman Alat Musik</li></ul>', 'http://localhost/admin-soulmate-art-course/dist/img/image-default.png'),
-(13, 'Kelas Luar Biasa <br> (Berkebutuhan Khusus)', '359.000', '<ul><li>4x Pertemuan</li><li>Pinjaman Alat Musik</li></ul>', 'http://localhost/admin-soulmate-art-course/dist/img/image-default.png'),
-(14, 'Online Class', '299.000', '<ul><li>4x Pertemuan</li><li>Pinjaman Alat Musik</li></ul>', 'http://localhost/admin-soulmate-art-course/dist/img/image-default.png');
+INSERT INTO `price` (`id_price`, `id_price_category`, `price_name`, `price`, `price_descriptions`, `image`) VALUES
+(11, 1, 'Private Class', '150.000', '<ul><li>4x Pertemuan</li><li>Pinjaman Alat Musik</li></ul>', 'http://localhost/admin-soulmate-art-course/dist/img/image-default.png'),
+(12, 4, 'Group Class', '449.000', '<ul><li>4x Pertemuan</li><li>Pinjaman Alat Musik</li></ul>', 'http://localhost/admin-soulmate-art-course/dist/img/image-default.png'),
+(13, 3, 'Kelas Luar Biasa <br> (Berkebutuhan Khusus)', '359.000', '<ul><li>4x Pertemuan</li><li>Pinjaman Alat Musik</li></ul>', 'http://localhost/admin-soulmate-art-course/dist/img/image-default.png'),
+(14, 1, 'Online Class', '299.000', '<ul><li>4x Pertemuan</li><li>Pinjaman Alat Musik</li></ul>', 'http://localhost/admin-soulmate-art-course/dist/img/image-default.png');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `price_category`
+--
+
+CREATE TABLE `price_category` (
+  `id_price_category` int(11) NOT NULL,
+  `category_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `price_category`
+--
+
+INSERT INTO `price_category` (`id_price_category`, `category_name`) VALUES
+(1, 'Surabaya'),
+(3, 'Jogja'),
+(4, 'Jombang');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `promo`
+--
+
+CREATE TABLE `promo` (
+  `id_promo` int(11) NOT NULL,
+  `name` varchar(20) NOT NULL,
+  `from_date` date NOT NULL,
+  `end_date` date NOT NULL,
+  `image` text NOT NULL,
+  `status` int(1) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `promo`
+--
+
+INSERT INTO `promo` (`id_promo`, `name`, `from_date`, `end_date`, `image`, `status`) VALUES
+(5, 'Flash Sale', '2021-05-28', '2021-05-28', 'http://localhost/admin-soulmate-art-course/php/companyProfile/image/promo/2021-05-2805-07-28pm2021-03-1710-46-12pm2021-02-0507-40-22pmportfolio-1.jpg', 0),
+(6, 'Promo Ramadhan ', '2021-05-28', '2021-07-29', 'http://localhost/admin-soulmate-art-course/dist/img/image-default.png', 1);
 
 -- --------------------------------------------------------
 
@@ -327,7 +376,10 @@ CREATE TABLE `video` (
 
 INSERT INTO `video` (`id_video`, `id_video_category`, `video_name`, `link`) VALUES
 (2, 1, 'ini video2', 'ini link2'),
-(4, 3, 'Ini Video Gitar Pertama', 'https://www.youtube.com/embed/bhRM868Oi2Q');
+(4, 3, 'Ini Video Gitar Pertama', 'https://www.youtube.com/embed/bhRM868Oi2Q'),
+(5, 4, 'ini video2', 'https://www.youtube.com/embed/bhRM868Oi2Q'),
+(6, 5, 'ini video2123', 'https://www.youtube.com/embed/bhRM868Oi2Q'),
+(7, 6, 'ini video1', 'https://www.youtube.com/embed/bhRM868Oi2Q');
 
 -- --------------------------------------------------------
 
@@ -347,7 +399,8 @@ CREATE TABLE `video_category` (
 INSERT INTO `video_category` (`id_video_category`, `category_name`) VALUES
 (3, 'Gitar'),
 (4, 'Biola'),
-(5, 'Drum');
+(5, 'Drum'),
+(6, 'Piano');
 
 -- --------------------------------------------------------
 
@@ -933,7 +986,153 @@ INSERT INTO `visitor` (`id_visitor`, `name`, `date`, `time`) VALUES
 (546, 'Anonym', '2021-05-23', '08:20:33'),
 (547, 'Anonym', '2021-05-23', '08:21:13'),
 (548, 'Anonym', '2021-05-23', '08:21:27'),
-(549, 'Anonym', '2021-05-23', '08:21:36');
+(549, 'Anonym', '2021-05-23', '08:21:36'),
+(550, 'Anonym', '2021-05-24', '07:05:52'),
+(551, 'Anonym', '2021-05-24', '07:10:21'),
+(552, 'Anonym', '2021-05-24', '07:10:29'),
+(553, 'Anonym', '2021-05-24', '07:18:27'),
+(554, 'Anonym', '2021-05-24', '07:18:39'),
+(555, 'Anonym', '2021-05-24', '07:19:40'),
+(556, 'Anonym', '2021-05-24', '07:19:57'),
+(557, 'Anonym', '2021-05-24', '07:23:47'),
+(558, 'Anonym', '2021-05-24', '07:25:11'),
+(559, 'Anonym', '2021-05-24', '07:26:40'),
+(560, 'Anonym', '2021-05-24', '07:27:13'),
+(561, 'Anonym', '2021-05-24', '07:27:54'),
+(562, 'Anonym', '2021-05-24', '07:42:06'),
+(563, 'Anonym', '2021-05-24', '07:49:23'),
+(564, 'Anonym', '2021-05-24', '07:50:04'),
+(565, 'Anonym', '2021-05-24', '07:53:53'),
+(566, 'Anonym', '2021-05-24', '07:54:26'),
+(567, 'Anonym', '2021-05-24', '07:56:50'),
+(568, 'Anonym', '2021-05-24', '08:00:28'),
+(569, 'Anonym', '2021-05-24', '08:05:36'),
+(570, 'Anonym', '2021-05-24', '08:08:45'),
+(571, 'Anonym', '2021-05-24', '08:08:54'),
+(572, 'Anonym', '2021-05-24', '08:11:49'),
+(573, 'Anonym', '2021-05-24', '08:13:59'),
+(574, 'Anonym', '2021-05-24', '08:15:55'),
+(575, 'Anonym', '2021-05-24', '08:17:29'),
+(576, 'Anonym', '2021-05-24', '08:22:12'),
+(577, 'Anonym', '2021-05-24', '08:22:21'),
+(578, 'Anonym', '2021-05-24', '08:23:08'),
+(579, 'Anonym', '2021-05-24', '08:23:29'),
+(580, 'Anonym', '2021-05-24', '08:23:55'),
+(581, 'Anonym', '2021-05-24', '08:24:30'),
+(582, 'Anonym', '2021-05-24', '08:24:46'),
+(583, 'Anonym', '2021-05-24', '08:24:56'),
+(584, 'Anonym', '2021-05-24', '08:25:29'),
+(585, 'Anonym', '2021-05-24', '08:26:22'),
+(586, 'Anonym', '2021-05-24', '08:26:35'),
+(587, 'Anonym', '2021-05-24', '08:27:14'),
+(588, 'Anonym', '2021-05-24', '05:18:08'),
+(589, 'Anonym', '2021-05-25', '08:55:44'),
+(590, 'Anonym', '2021-05-25', '09:17:47'),
+(591, 'Anonym', '2021-05-25', '09:18:14'),
+(592, 'Anonym', '2021-05-28', '05:21:54'),
+(593, 'Anonym', '2021-05-28', '05:25:01'),
+(594, 'Anonym', '2021-05-28', '05:26:09'),
+(595, 'Anonym', '2021-05-28', '05:27:21'),
+(596, 'Anonym', '2021-05-28', '05:27:23'),
+(597, 'Anonym', '2021-05-28', '05:37:21'),
+(598, 'Anonym', '2021-05-28', '05:38:31'),
+(599, 'Anonym', '2021-05-28', '05:40:02'),
+(600, 'Anonym', '2021-05-28', '05:41:25'),
+(601, 'Anonym', '2021-05-28', '05:41:55'),
+(602, 'Anonym', '2021-05-28', '05:43:11'),
+(603, 'Anonym', '2021-05-28', '05:44:03'),
+(604, 'Anonym', '2021-05-28', '05:45:14'),
+(605, 'Anonym', '2021-05-28', '05:46:34'),
+(606, 'Anonym', '2021-05-28', '02:55:14'),
+(607, 'Anonym', '2021-05-28', '03:11:48'),
+(608, 'Anonym', '2021-05-28', '03:12:20'),
+(609, 'Anonym', '2021-05-28', '03:14:07'),
+(610, 'Anonym', '2021-05-28', '03:14:21'),
+(611, 'Anonym', '2021-05-28', '03:14:29'),
+(612, 'Anonym', '2021-05-28', '03:14:52'),
+(613, 'Anonym', '2021-05-28', '03:15:31'),
+(614, 'Anonym', '2021-05-28', '03:15:40'),
+(615, 'Anonym', '2021-05-28', '03:20:36'),
+(616, 'Anonym', '2021-05-28', '03:20:58'),
+(617, 'Anonym', '2021-05-28', '03:21:33'),
+(618, 'Anonym', '2021-05-28', '03:22:17'),
+(619, 'Anonym', '2021-05-28', '03:23:31'),
+(620, 'Anonym', '2021-05-28', '03:23:40'),
+(621, 'Anonym', '2021-05-28', '03:31:09'),
+(622, 'Anonym', '2021-05-28', '03:32:05'),
+(623, 'Anonym', '2021-05-28', '03:33:31'),
+(624, 'Anonym', '2021-05-28', '03:33:49'),
+(625, 'Anonym', '2021-05-28', '03:34:33'),
+(626, 'Anonym', '2021-05-28', '03:35:20'),
+(627, 'Anonym', '2021-05-28', '03:36:47'),
+(628, 'Anonym', '2021-05-28', '03:37:50'),
+(629, 'Anonym', '2021-05-28', '03:38:01'),
+(630, 'Anonym', '2021-05-28', '03:38:29'),
+(631, 'Anonym', '2021-05-28', '03:38:47'),
+(632, 'Anonym', '2021-05-28', '03:38:52'),
+(633, 'Anonym', '2021-05-28', '03:39:39'),
+(634, 'Anonym', '2021-05-28', '05:08:10'),
+(635, 'Anonym', '2021-05-28', '05:20:14'),
+(636, 'Anonym', '2021-05-28', '05:20:40'),
+(637, 'Anonym', '2021-05-28', '05:20:51'),
+(638, 'Anonym', '2021-05-28', '05:21:19'),
+(639, 'Anonym', '2021-05-28', '05:21:26'),
+(640, 'Anonym', '2021-05-28', '05:22:35'),
+(641, 'Anonym', '2021-05-28', '05:23:02'),
+(642, 'Anonym', '2021-05-28', '05:25:40'),
+(643, 'Anonym', '2021-05-28', '05:27:01'),
+(644, 'Anonym', '2021-05-28', '05:27:31'),
+(645, 'Anonym', '2021-05-28', '05:27:49'),
+(646, 'Anonym', '2021-05-28', '05:27:54'),
+(647, 'Anonym', '2021-05-28', '05:28:20'),
+(648, 'Anonym', '2021-05-28', '05:33:14'),
+(649, 'Anonym', '2021-05-28', '05:37:09'),
+(650, 'Anonym', '2021-05-28', '05:40:13'),
+(651, 'Anonym', '2021-05-28', '05:41:19'),
+(652, 'Anonym', '2021-05-28', '05:42:15'),
+(653, 'Anonym', '2021-05-28', '05:43:15'),
+(654, 'Anonym', '2021-05-28', '05:43:42'),
+(655, 'Anonym', '2021-05-28', '05:44:28'),
+(656, 'Anonym', '2021-05-28', '05:44:44'),
+(657, 'Anonym', '2021-05-28', '05:46:33'),
+(658, 'Anonym', '2021-05-28', '05:47:21'),
+(659, 'Anonym', '2021-05-28', '05:49:39'),
+(660, 'Anonym', '2021-05-28', '05:50:16'),
+(661, 'Anonym', '2021-05-28', '05:55:30'),
+(662, 'Anonym', '2021-05-28', '05:56:48'),
+(663, 'Anonym', '2021-05-28', '05:58:40'),
+(664, 'Anonym', '2021-05-28', '05:59:27'),
+(665, 'Anonym', '2021-05-28', '05:59:37'),
+(666, 'Anonym', '2021-05-28', '06:02:19'),
+(667, 'Anonym', '2021-05-28', '06:02:25'),
+(668, 'Anonym', '2021-05-28', '06:02:53'),
+(669, 'Anonym', '2021-05-28', '06:03:24'),
+(670, 'Anonym', '2021-05-28', '06:04:16'),
+(671, 'Anonym', '2021-05-28', '06:06:50'),
+(672, 'Anonym', '2021-05-28', '06:07:44'),
+(673, 'Anonym', '2021-05-28', '06:08:01'),
+(674, 'Anonym', '2021-05-28', '06:08:23'),
+(675, 'Anonym', '2021-05-28', '06:08:34'),
+(676, 'Anonym', '2021-05-28', '06:10:21'),
+(677, 'Anonym', '2021-05-28', '06:11:14'),
+(678, 'Anonym', '2021-05-28', '06:11:35'),
+(679, 'Anonym', '2021-05-28', '06:12:22'),
+(680, 'Anonym', '2021-05-28', '06:12:37'),
+(681, 'Anonym', '2021-05-28', '06:13:00'),
+(682, 'Anonym', '2021-05-28', '06:13:06'),
+(683, 'Anonym', '2021-05-28', '06:14:25'),
+(684, 'Anonym', '2021-05-28', '06:14:27'),
+(685, 'Anonym', '2021-05-28', '06:14:28'),
+(686, 'Anonym', '2021-05-28', '06:14:30'),
+(687, 'Anonym', '2021-05-28', '06:14:53'),
+(688, 'Anonym', '2021-05-28', '06:15:00'),
+(689, 'Anonym', '2021-05-28', '06:15:00'),
+(690, 'Anonym', '2021-05-28', '06:15:25'),
+(691, 'Anonym', '2021-05-28', '06:22:15'),
+(692, 'Anonym', '2021-05-28', '06:23:23'),
+(693, 'Anonym', '2021-05-28', '06:28:13'),
+(694, 'Anonym', '2021-05-28', '06:28:15'),
+(695, 'Anonym', '2021-05-28', '06:32:39');
 
 --
 -- Indexes for dumped tables
@@ -1000,6 +1199,18 @@ ALTER TABLE `price`
   ADD PRIMARY KEY (`id_price`);
 
 --
+-- Indexes for table `price_category`
+--
+ALTER TABLE `price_category`
+  ADD PRIMARY KEY (`id_price_category`);
+
+--
+-- Indexes for table `promo`
+--
+ALTER TABLE `promo`
+  ADD PRIMARY KEY (`id_promo`);
+
+--
 -- Indexes for table `service`
 --
 ALTER TABLE `service`
@@ -1055,7 +1266,7 @@ ALTER TABLE `about_us`
 -- AUTO_INCREMENT for table `client`
 --
 ALTER TABLE `client`
-  MODIFY `id_client` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_client` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `contact_us`
@@ -1073,13 +1284,13 @@ ALTER TABLE `event`
 -- AUTO_INCREMENT for table `gallery`
 --
 ALTER TABLE `gallery`
-  MODIFY `id_gallery` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_gallery` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `gallery_category`
 --
 ALTER TABLE `gallery_category`
-  MODIFY `id_gallery_category` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_gallery_category` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `header`
@@ -1106,6 +1317,18 @@ ALTER TABLE `price`
   MODIFY `id_price` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
+-- AUTO_INCREMENT for table `price_category`
+--
+ALTER TABLE `price_category`
+  MODIFY `id_price_category` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `promo`
+--
+ALTER TABLE `promo`
+  MODIFY `id_promo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT for table `service`
 --
 ALTER TABLE `service`
@@ -1127,13 +1350,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `video`
 --
 ALTER TABLE `video`
-  MODIFY `id_video` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_video` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `video_category`
 --
 ALTER TABLE `video_category`
-  MODIFY `id_video_category` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_video_category` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `visi`
@@ -1145,7 +1368,7 @@ ALTER TABLE `visi`
 -- AUTO_INCREMENT for table `visitor`
 --
 ALTER TABLE `visitor`
-  MODIFY `id_visitor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=550;
+  MODIFY `id_visitor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=696;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

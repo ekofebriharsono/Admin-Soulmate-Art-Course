@@ -11,6 +11,8 @@ if (isset($_POST['submitInsertPrice'])) {
     $price_name = $_POST['price_name'];
     $price = $_POST['price'];
     $price_descriptions = $_POST['price_descriptions'];
+    $id_price_category = $_POST['id_price_category'];
+
 
     $ekstensi_diperbolehkan    = array('png', 'jpg');
     $date = date("Y-m-d");
@@ -33,7 +35,7 @@ if (isset($_POST['submitInsertPrice'])) {
         $image = $default_image;
     }
 
-    $sql = "INSERT INTO `price` (`id_price`, `price_name`, `price`, `price_descriptions`, `image`) VALUES (NULL, '$price_name', '$price','$price_descriptions','$image')";
+    $sql = "INSERT INTO `price` (`id_price`,`id_price_category`, `price_name`, `price`, `price_descriptions`, `image`) VALUES (NULL, $id_price_category '$price_name', '$price','$price_descriptions','$image')";
     $res = mysqli_query($conn, $sql);
     if ($res) {
         header('Location: ../../pages/companyProfile/price.php?status=201');
@@ -58,6 +60,7 @@ if (isset($_POST['submitUpdatePrice'])) {
     $price_name = $_POST['price_name'];
     $price = $_POST['price'];
     $price_descriptions = $_POST['price_descriptions'];
+    $id_price_category = $_POST['id_price_category'];
 
     $ekstensi_diperbolehkan    = array('png', 'jpg');
     $date = date("Y-m-d");
@@ -79,6 +82,7 @@ if (isset($_POST['submitUpdatePrice'])) {
     if (@$image != null) {
         $sql = "UPDATE `price` SET 
             `price_name` = '$price_name', 
+            `id_price_category` = '$id_price_category', 
             `price` = '$price', 
             `price_descriptions` = '$price_descriptions', 
             `image` = '$image' 
@@ -86,6 +90,7 @@ if (isset($_POST['submitUpdatePrice'])) {
     } else {
         $sql = "UPDATE `price` SET 
             `price_name` = '$price_name', 
+            `id_price_category` = '$id_price_category', 
             `price` = '$price', 
             `price_descriptions` = '$price_descriptions'
         WHERE `price`.`id_price` =  $id;";
@@ -96,8 +101,7 @@ if (isset($_POST['submitUpdatePrice'])) {
     if ($res) {
         header('Location: ../../pages/companyProfile/price.php?status=203');
     } else {
-        // header('Location: ../../pages/companyProfile/price.php?status=500');
-        echo $sql;
+        header('Location: ../../pages/companyProfile/price.php?status=500');
     }
 }
 

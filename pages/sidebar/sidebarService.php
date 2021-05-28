@@ -52,9 +52,9 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../companyProfile/client.php" class="nav-link">
+                <a href="../companyProfile/promo.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Client</p>
+                  <p>Promo</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -64,7 +64,13 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../companyProfile/visimisi.php" class="nav-link ">
+                <a href="../companyProfile/client.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Client</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="../companyProfile/visimisi.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Visi / Misi</p>
                 </a>
@@ -82,17 +88,18 @@
                 </a>
               </li>
               <li class="nav-item">
+                <a href="../companyProfile/priceCategory.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Price Category</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="../companyProfile/price.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Price</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="../companyProfile/team.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Team</p>
-                </a>
-              </li>
+
               <li class="nav-item">
                 <a href="../companyProfile/galleryCategory.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
@@ -118,6 +125,12 @@
                 </a>
               </li>
               <li class="nav-item">
+                <a href="../companyProfile/team.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Team</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="../companyProfile/aboutUs.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>About Us</p>
@@ -131,8 +144,6 @@
               </li>
             </ul>
           </li>
-
-
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

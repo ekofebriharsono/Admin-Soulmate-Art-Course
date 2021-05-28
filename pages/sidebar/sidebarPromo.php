@@ -51,7 +51,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../companyProfile/promo.php" class="nav-link">
+                <a href="../companyProfile/promo.php" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Promo</p>
                 </a>
@@ -75,7 +75,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../companyProfile/event.php" class="nav-link">
+                <a href="../companyProfile/event.php" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Event</p>
                 </a>
@@ -93,7 +93,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../companyProfile/price.php" class="nav-link active">
+                <a href="../companyProfile/price.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Price</p>
                 </a>
