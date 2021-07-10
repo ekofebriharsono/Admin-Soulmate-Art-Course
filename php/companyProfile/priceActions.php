@@ -35,12 +35,12 @@ if (isset($_POST['submitInsertPrice'])) {
         $image = $default_image;
     }
 
-    $sql = "INSERT INTO `price` (`id_price`,`id_price_category`, `price_name`, `price`, `price_descriptions`, `image`) VALUES (NULL, $id_price_category '$price_name', '$price','$price_descriptions','$image')";
+    $sql = "INSERT INTO `price` (`id_price`,`id_price_category`, `price_name`, `price`, `price_descriptions`, `image`) VALUES (NULL, $id_price_category, '$price_name', '$price','$price_descriptions','$image')";
     $res = mysqli_query($conn, $sql);
     if ($res) {
         header('Location: ../../pages/companyProfile/price.php?status=201');
     } else {
-        header('Location: ../../pages/companyProfile/price.php?status=500');
+        header('Location: ../../pages/companyProfile/price.php?status='.$sql);
     }
 }
 

@@ -324,7 +324,7 @@ if ($_SESSION["id"] == null || $_SESSION["id"] == "") {
                     } else if (status == 203) {
                         toastr.success('Data Berhasil Diperbaharui!');
                     } else {
-                        toastr.error('Data Gagal Disimpan!');
+                        toastr.error(status);
                     }
                 <?php } ?>
             });
