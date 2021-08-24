@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 28, 2021 at 06:34 PM
+-- Generation Time: Jul 10, 2021 at 02:12 PM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 7.4.19
 
@@ -105,8 +105,8 @@ CREATE TABLE `event` (
 --
 
 INSERT INTO `event` (`id_event`, `event_name`, `event_descriptions`, `date`, `image`) VALUES
-(14, 'Acara 1 ', '<p style=\"text-align: justify; \"><strong style=\"margin: 0px; padding: 0px; font-family: \" open=\"\" sans\",=\"\" arial,=\"\" sans-serif;=\"\" font-size:=\"\" 14px;=\"\" text-align:=\"\" justify;\"=\"\">Lorem Ipsum</strong><span style=\"font-family: \" open=\"\" sans\",=\"\" arial,=\"\" sans-serif;=\"\" font-size:=\"\" 14px;=\"\" text-align:=\"\" justify;\"=\"\"> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</span><br></p>', '2021-05-23', 'http://localhost/admin-soulmate-art-course/dist/img/image-default.png'),
-(15, 'Acara 2', '<p style=\"text-align: justify; \"><strong style=\"margin: 0px; padding: 0px; font-family: \" open=\"\" sans\",=\"\" arial,=\"\" sans-serif;=\"\" font-size:=\"\" 14px;=\"\" text-align:=\"\" justify;\"=\"\">Lorem Ipsum</strong><span style=\"font-family: \" open=\"\" sans\",=\"\" arial,=\"\" sans-serif;=\"\" font-size:=\"\" 14px;=\"\" text-align:=\"\" justify;\"=\"\">&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</span><br></p>', '2021-05-23', 'http://localhost/admin-soulmate-art-course/dist/img/image-default.png'),
+(14, 'Acara 1 ', '<p style=\"text-align: justify; \"><strong style=\"margin: 0px; padding: 0px; font-family: \" open=\"\" sans\",=\"\" arial,=\"\" sans-serif;=\"\" font-size:=\"\" 14px;=\"\" text-align:=\"\" justify;\"=\"\">Lorem Ipsum</strong><span style=\"font-family: \" open=\"\" sans\",=\"\" arial,=\"\" sans-serif;=\"\" font-size:=\"\" 14px;=\"\" text-align:=\"\" justify;\"=\"\"> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</span><br></p>', '2021-05-23', 'http://localhost/admin-soulmate-art-course/php/companyProfile/image/event/2021-07-0206-01-49pm3.jpg'),
+(15, 'Acara 2', '<p style=\"text-align: justify; \"><strong style=\"margin: 0px; padding: 0px; font-family: \" open=\"\" sans\",=\"\" arial,=\"\" sans-serif;=\"\" font-size:=\"\" 14px;=\"\" text-align:=\"\" justify;\"=\"\">Lorem Ipsum</strong><span style=\"font-family: \" open=\"\" sans\",=\"\" arial,=\"\" sans-serif;=\"\" font-size:=\"\" 14px;=\"\" text-align:=\"\" justify;\"=\"\"> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</span><br></p>', '2021-05-23', 'http://localhost/admin-soulmate-art-course/php/companyProfile/image/event/2021-07-0206-04-52pm4.jpg'),
 (16, 'Acara 3', '<p style=\"text-align: justify;\"><strong style=\"margin: 0px; padding: 0px; font-family: \" open=\"\" sans\",=\"\" arial,=\"\" sans-serif;=\"\" font-size:=\"\" 14px;\"=\"\">Lorem Ipsum</strong><span style=\"font-family: \" open=\"\" sans\",=\"\" arial,=\"\" sans-serif;=\"\" font-size:=\"\" 14px;\"=\"\">&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</span><br></p>', '2021-05-26', 'http://localhost/admin-soulmate-art-course/dist/img/image-default.png');
 
 -- --------------------------------------------------------
@@ -152,7 +152,8 @@ INSERT INTO `gallery_category` (`id_gallery_category`, `category_name`) VALUES
 (3, 'Acara'),
 (4, 'Bimbingan'),
 (5, 'Private'),
-(6, 'Group');
+(6, 'Group'),
+(7, 'tes ');
 
 -- --------------------------------------------------------
 
@@ -173,7 +174,7 @@ CREATE TABLE `header` (
 --
 
 INSERT INTO `header` (`id_header`, `header_name`, `sort_name`, `button_link`, `image`) VALUES
-(20, 'Soulmate Art Course', 'Sambung rasa antar hati melalui nada, irama dan harmoni.', 'https://api.whatsapp.com/send?phone=6287860353550&text=Hello%20Soulmate,%20', 'http://localhost/Admin-Soulmate-Art-Course/php/companyProfile/image/header/2021-02-0402-31-35pmhero-img.png');
+(20, 'Soulmate Art Course 1', 'Sambung rasa antar hati melalui nada, irama dan harmoni.', 'https://api.whatsapp.com/send?phone=6287860353550&text=Hello%20Soulmate,%20', 'http://localhost/Admin-Soulmate-Art-Course/php/companyProfile/image/header/2021-02-0402-31-35pmhero-img.png');
 
 -- --------------------------------------------------------
 
@@ -215,8 +216,9 @@ CREATE TABLE `owner` (
 --
 
 INSERT INTO `owner` (`id_owner`, `owner_name`, `label_owner`, `owner_descriptions`, `instagram`, `facebook`, `whatsapp`, `image`) VALUES
-(5, 'Faris Maulana Malik', 'CEO', 'Alumni Institut Seni Indonesia, Guru Musik Nation Star Academy & YPPI Surabaya, dan Musisi.', 'https://www.instagram.com/farismaulanamalik/', 'https://www.facebook.com/faris.malik.3994', 'https://api.whatsapp.com/send?phone=6287758563429', 'http://localhost/admin-soulmate-art-course/dist/img/image-default.png'),
-(6, 'Anggita Fauziah Regita Laras', 'CEO', 'Alumni Institut Seni Indonesia dari jurusan Seni Musik, Owner Soulmate Art Course, Founder Omah Semangart, Musisi.', 'https://www.instagram.com/anggitaaregitaa/?igshid=m0hya1rgjksr', 'https://www.facebook.com/anggita.fauziah.58', 'https://api.whatsapp.com/send?phone=6281359255082', 'http://localhost/admin-soulmate-art-course/dist/img/image-default.png');
+(5, 'Faris Maulana Malik', 'CEO', 'Alumni Institut Seni Indonesia, Guru Musik Nation Star Academy & YPPI Surabaya, dan Musisi.', 'https://www.instagram.com/farismaulanamalik/', 'https://www.facebook.com/faris.malik.3994', 'https://api.whatsapp.com/send?phone=6287758563429', 'http://localhost/admin-soulmate-art-course/php/companyProfile/image/owner/2021-07-0205-58-39pm1.png'),
+(6, 'Anggita Fauziah Regita Laras', 'CEO', 'Alumni Institut Seni Indonesia dari jurusan Seni Musik, Owner Soulmate Art Course, Founder Omah Semangart, Musisi.', 'https://www.instagram.com/anggitaaregitaa/?igshid=m0hya1rgjksr', 'https://www.facebook.com/anggita.fauziah.58', 'https://api.whatsapp.com/send?phone=6281359255082', 'http://localhost/admin-soulmate-art-course/php/companyProfile/image/owner/2021-07-0205-59-52pm2.jpg'),
+(7, 'Faris Maulana Malik 2', 'CEO', 'Alumni Institut Seni Indonesia, Guru Musik Nation Star Academy & YPPI Surabaya, dan Musisi.', 'https://www.instagram.com/farismaulanamalik/', 'https://www.facebook.com/faris.malik.3994', 'wa', 'http://localhost/admin-soulmate-art-course/dist/img/image-default.png');
 
 -- --------------------------------------------------------
 
@@ -241,7 +243,9 @@ INSERT INTO `price` (`id_price`, `id_price_category`, `price_name`, `price`, `pr
 (11, 1, 'Private Class', '150.000', '<ul><li>4x Pertemuan</li><li>Pinjaman Alat Musik</li></ul>', 'http://localhost/admin-soulmate-art-course/dist/img/image-default.png'),
 (12, 4, 'Group Class', '449.000', '<ul><li>4x Pertemuan</li><li>Pinjaman Alat Musik</li></ul>', 'http://localhost/admin-soulmate-art-course/dist/img/image-default.png'),
 (13, 3, 'Kelas Luar Biasa <br> (Berkebutuhan Khusus)', '359.000', '<ul><li>4x Pertemuan</li><li>Pinjaman Alat Musik</li></ul>', 'http://localhost/admin-soulmate-art-course/dist/img/image-default.png'),
-(14, 1, 'Online Class', '299.000', '<ul><li>4x Pertemuan</li><li>Pinjaman Alat Musik</li></ul>', 'http://localhost/admin-soulmate-art-course/dist/img/image-default.png');
+(14, 1, 'Online Class', '299.000', '<ul><li>4x Pertemuan</li><li>Pinjaman Alat Musik</li><li>Free makan</li></ul>', 'http://localhost/admin-soulmate-art-course/dist/img/image-default.png'),
+(15, 1, 'tess', '150.000', '<ul><li>asd</li><li>asd</li></ul>', 'http://localhost/admin-soulmate-art-course/dist/img/image-default.png'),
+(16, 1, 'Price 1', '150.000', '<ul><li>asd</li><li>asd</li></ul>', 'http://localhost/admin-soulmate-art-course/dist/img/image-default.png');
 
 -- --------------------------------------------------------
 
@@ -284,7 +288,7 @@ CREATE TABLE `promo` (
 
 INSERT INTO `promo` (`id_promo`, `name`, `from_date`, `end_date`, `image`, `status`) VALUES
 (5, 'Flash Sale', '2021-05-28', '2021-05-28', 'http://localhost/admin-soulmate-art-course/php/companyProfile/image/promo/2021-05-2805-07-28pm2021-03-1710-46-12pm2021-02-0507-40-22pmportfolio-1.jpg', 0),
-(6, 'Promo Ramadhan ', '2021-05-28', '2021-07-29', 'http://localhost/admin-soulmate-art-course/dist/img/image-default.png', 1);
+(6, 'Promo Ramadhan ', '2021-07-02', '2021-07-02', 'http://localhost/admin-soulmate-art-course/dist/img/image-default.png', 1);
 
 -- --------------------------------------------------------
 
@@ -1132,7 +1136,29 @@ INSERT INTO `visitor` (`id_visitor`, `name`, `date`, `time`) VALUES
 (692, 'Anonym', '2021-05-28', '06:23:23'),
 (693, 'Anonym', '2021-05-28', '06:28:13'),
 (694, 'Anonym', '2021-05-28', '06:28:15'),
-(695, 'Anonym', '2021-05-28', '06:32:39');
+(695, 'Anonym', '2021-05-28', '06:32:39'),
+(696, 'Anonym', '2021-06-09', '12:06:31'),
+(697, 'Anonym', '2021-06-09', '12:07:55'),
+(698, 'Anonym', '2021-07-02', '05:04:57'),
+(699, 'Anonym', '2021-07-02', '05:06:59'),
+(700, 'Anonym', '2021-07-02', '05:07:47'),
+(701, 'Anonym', '2021-07-02', '05:11:17'),
+(702, 'Anonym', '2021-07-02', '05:12:56'),
+(703, 'Anonym', '2021-07-02', '05:13:27'),
+(704, 'Anonym', '2021-07-02', '05:27:03'),
+(705, 'Anonym', '2021-07-02', '05:30:08'),
+(706, 'Anonym', '2021-07-02', '05:31:50'),
+(707, 'Anonym', '2021-07-02', '05:58:43'),
+(708, 'Anonym', '2021-07-02', '05:59:56'),
+(709, 'Anonym', '2021-07-02', '06:01:52'),
+(710, 'Anonym', '2021-07-02', '06:04:57'),
+(711, 'Anonym', '2021-07-02', '06:11:10'),
+(712, 'Anonym', '2021-07-02', '06:11:37'),
+(713, 'Anonym', '2021-07-02', '06:11:54'),
+(714, 'Anonym', '2021-07-02', '06:12:48'),
+(715, 'Anonym', '2021-07-02', '06:13:02'),
+(716, 'Anonym', '2021-07-02', '06:15:54'),
+(717, 'Anonym', '2021-07-02', '06:16:59');
 
 --
 -- Indexes for dumped tables
@@ -1290,7 +1316,7 @@ ALTER TABLE `gallery`
 -- AUTO_INCREMENT for table `gallery_category`
 --
 ALTER TABLE `gallery_category`
-  MODIFY `id_gallery_category` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_gallery_category` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `header`
@@ -1308,13 +1334,13 @@ ALTER TABLE `misi`
 -- AUTO_INCREMENT for table `owner`
 --
 ALTER TABLE `owner`
-  MODIFY `id_owner` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_owner` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `price`
 --
 ALTER TABLE `price`
-  MODIFY `id_price` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_price` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `price_category`
@@ -1368,7 +1394,7 @@ ALTER TABLE `visi`
 -- AUTO_INCREMENT for table `visitor`
 --
 ALTER TABLE `visitor`
-  MODIFY `id_visitor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=696;
+  MODIFY `id_visitor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=718;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

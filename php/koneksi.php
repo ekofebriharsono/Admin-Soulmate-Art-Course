@@ -18,5 +18,7 @@ function CloseCon($conn)
  {
  $conn -> close();
  }
+ OpenCon();
+
    
 ?>
